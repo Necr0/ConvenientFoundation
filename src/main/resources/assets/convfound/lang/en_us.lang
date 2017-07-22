@@ -1,0 +1,97 @@
+### ITEMS ###
+
+item.convfound:wrench.name=Wrench
+item.convfound:slime_bucket.name=Slime Bucket
+
+
+
+### POTION NAMES ###
+
+potion.convfound:lumbering.name=Lumbering
+potion.convfound:thorns.name=Thorns
+potion.convfound:bandaged.name=Bandaged
+
+
+
+### ITEM GROUPS ###
+
+itemGroup.convfound=Convenient Foundation
+
+
+
+### TOOLTIPS ###
+
+## Info
+tooltip.convfound:wrench.info=Used for rotating, configuring & dismantling.
+
+## Item Categories
+tooltip.convfound:itemCategory=Item Category: %s
+tooltip.convfound:itemCategory.craftingMaterial=Crafting Material
+tooltip.convfound:itemCategory.trinket=Trinket
+tooltip.convfound:itemCategory.relic=Relic
+tooltip.convfound:itemCategory.tool=Tool
+tooltip.convfound:itemCategory.consumable=Consumable
+tooltip.convfound:itemCategory.machine=Machine
+tooltip.convfound:itemCategory.module=Module
+tooltip.convfound:itemCategory.misc=Miscellaneous
+tooltip.convfound:itemCategory.buildingBlock=Building Block
+
+## Misc
+tooltip.convfound:showRecipes=Show Recipes
+tooltip.convfound:shiftInfo=<Hold shift for more information>
+tooltip.convfound:baublesRequired=The Baubles mod is required for this item to be functional. If you wish to use it install the Baubles mod.
+
+
+
+### GENERAL ###
+
+## Redstone
+convfound:highrs=High Redstone Signal
+convfound:lowrs=Low Redstone Signal
+convfound:pulsers=Redstone Pulse
+convfound:ignorers=Ignore Redstone
+
+## Imperatives
+convfound:match=Match %s.
+convfound:ignore=Ignore %s.
+convfound:filter=Filter %s.
+convfound:filterNot=Don't Filter %s.
+convfound:restrict=Restrict %s.
+convfound:restrictNot=Don't Restrict %s.
+
+## Common
+convfound:damageValue=Damage Value
+convfound:NBT=NBT
+#
+convfound:input=Input
+convfound:output=Output
+#
+convfound:blacklist=Blacklist
+convfound:whitelist=Whitelist
+#
+convfound:page=Page
+convfound:done=Done
+convfound:range=Range
+convfound:unit.blocks=blocks
+#
+convfound:none=None
+convfound:yes=Yes
+convfound:no=No
+
+## Colors
+color.convfound:black=Black
+color.convfound:red=Red
+color.convfound:green=Green
+color.convfound:brown=Brown
+color.convfound:blue=Blue
+color.convfound:purple=Purple
+color.convfound:cyan=Cyan
+color.convfound:silver=Light Gray
+color.convfound:gray=Gray
+color.convfound:pink=Pink
+color.convfound:lime=Lime
+color.convfound:yellow=Yellow
+color.convfound:lightBlue=Light Blue
+color.convfound:magenta=Magenta
+color.convfound:orange=Orange
+color.convfound:white=White
