@@ -1,6 +1,6 @@
 package convenientfoundation.item;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibItems;
 import convenientfoundation.block.wrench.IConfigurable;
 import convenientfoundation.block.wrench.IDismantleable;
 import convenientfoundation.item.base.CFItem;
@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 public class ItemWrench extends CFItem {
 
     public ItemWrench() {
-        super(ModConstants.ItemNames.wrench);
+        super(LibItems.wrench);
         this.setMaxStackSize(1);
         this.setCategory(EnumItemCategory.TOOL);
     }

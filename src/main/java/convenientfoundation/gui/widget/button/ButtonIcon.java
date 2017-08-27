@@ -1,6 +1,6 @@
 package convenientfoundation.gui.widget.button;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.gui.ImageResourceLocation;
 import convenientfoundation.gui.widget.IWidget;
 import convenientfoundation.gui.widget.IWidgetTooltip;
@@ -13,8 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class ButtonIcon extends GuiButton implements IWidget,IWidgetTooltip {
-	public static final ImageResourceLocation BUTTON_IDLE=new ImageResourceLocation(ModConstants.Mod.MODID+":textures/gui/imageButtons.png", 0, 0, 18, 18);
-	public static final ImageResourceLocation BUTTON_HOVER=new ImageResourceLocation(ModConstants.Mod.MODID+":textures/gui/imageButtons.png", 0, 18, 18, 18);
+	public static final ImageResourceLocation BUTTON_IDLE=new ImageResourceLocation(LibMod.MODID+":textures/gui/imageButtons.png", 0, 0, 18, 18);
+	public static final ImageResourceLocation BUTTON_HOVER=new ImageResourceLocation(LibMod.MODID+":textures/gui/imageButtons.png", 0, 18, 18, 18);
 	
 	public ImageResourceLocation img;
 	String tooltip;

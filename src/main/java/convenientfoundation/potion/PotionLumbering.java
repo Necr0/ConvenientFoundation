@@ -1,7 +1,7 @@
 package convenientfoundation.potion;
 
-import convenientfoundation.ModConstants;
-import convenientfoundation.ModImageResourceLocations;
+import convenientfoundation.libs.LibPotions;
+import convenientfoundation.libs.LibImages;
 import convenientfoundation.util.Helper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
@@ -16,7 +16,7 @@ public class PotionLumbering extends CFPotion {
     public static final PotionLumbering INSTANCE=new PotionLumbering();
 
     public PotionLumbering() {
-        super(ModConstants.PotionNames.lumbering, false, 0xFFD400, ModImageResourceLocations.LUMBERING);
+        super(LibPotions.lumbering, false, 0xFFD400, LibImages.LUMBERING);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.capabilities.forgeenergy;
 
 import convenientfoundation.capabilities.IAutoSavable;
 import net.minecraft.block.state.IBlockState;
@@ -11,28 +11,28 @@ import net.minecraftforge.energy.EnergyStorage;
 /**
  * Created by Necro on 6/4/2017.
  */
-public class EnergyStorageAutoSave extends EnergyStorage implements IEnergyStorageModifiable, INBTSerializable<NBTTagCompound>, IAutoSavable {
+public class ForgeForgeEnergyStorageAutoSave extends EnergyStorage implements IForgeEnergyStorageModifiable, INBTSerializable<NBTTagCompound>, IAutoSavable {
     public TileEntity te;
     public boolean causeUpdate=false;
     public int updateFlag=3;
     public String name="POWER";
 
-    public EnergyStorageAutoSave(TileEntity te, int capacity)
+    public ForgeForgeEnergyStorageAutoSave(TileEntity te, int capacity)
     {
         this(te,capacity,capacity,capacity,0);
     }
 
-    public EnergyStorageAutoSave(TileEntity te, int capacity, int maxTransfer)
+    public ForgeForgeEnergyStorageAutoSave(TileEntity te, int capacity, int maxTransfer)
     {
         this(te,capacity,maxTransfer,maxTransfer,0);
     }
 
-    public EnergyStorageAutoSave(TileEntity te, int capacity, int maxInput, int maxOutput)
+    public ForgeForgeEnergyStorageAutoSave(TileEntity te, int capacity, int maxInput, int maxOutput)
     {
         this(te,capacity,maxInput,maxOutput,0);
     }
 
-    public EnergyStorageAutoSave(TileEntity te, int capacity, int maxInput, int maxOutput, int energy)
+    public ForgeForgeEnergyStorageAutoSave(TileEntity te, int capacity, int maxInput, int maxOutput, int energy)
     {
         super(capacity,maxInput,maxOutput,energy);
         this.te=te;
@@ -102,17 +102,17 @@ public class EnergyStorageAutoSave extends EnergyStorage implements IEnergyStora
         setEnergy(nbt.hasKey("ENERGY", Constants.NBT.TAG_INT) ? nbt.getInteger("ENERGY") : 0);
     }
 
-    public EnergyStorageAutoSave setCauseUpdate(boolean causeUpdate) {
+    public ForgeForgeEnergyStorageAutoSave setCauseUpdate(boolean causeUpdate) {
         this.causeUpdate = causeUpdate;
         return this;
     }
 
-    public EnergyStorageAutoSave setUpdateFlag(int updateFlag) {
+    public ForgeForgeEnergyStorageAutoSave setUpdateFlag(int updateFlag) {
         this.updateFlag = updateFlag;
         return this;
     }
 
-    public EnergyStorageAutoSave setName(String name) {
+    public ForgeForgeEnergyStorageAutoSave setName(String name) {
         this.name = name;
         return this;
     }

@@ -1,6 +1,6 @@
 package convenientfoundation.item.base;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.util.Helper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -25,7 +25,7 @@ public class StringHelper {
 
     @SideOnly(Side.CLIENT)
     public static String getBaublesRequiredInfo(){
-        return TextFormatting.RED+Helper.localize("tooltip." + ModConstants.Mod.MODID + ":baublesRequired");
+        return TextFormatting.RED+Helper.localize("tooltip." + LibMod.MODID + ":baublesRequired");
     }
 
     @SideOnly(Side.CLIENT)

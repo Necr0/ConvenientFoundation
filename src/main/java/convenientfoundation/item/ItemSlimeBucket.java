@@ -1,6 +1,6 @@
 package convenientfoundation.item;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibItems;
 import convenientfoundation.item.base.CFItem;
 import convenientfoundation.util.Helper;
 import net.minecraft.entity.monster.EntitySlime;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class ItemSlimeBucket extends CFItem {
     public ItemSlimeBucket() {
-        super(ModConstants.ItemNames.slime_bucket);
+        super(LibItems.slime_bucket);
         this.setDefaultInfo(false).setMaxStackSize(1);
         MinecraftForge.EVENT_BUS.register(this);
     }

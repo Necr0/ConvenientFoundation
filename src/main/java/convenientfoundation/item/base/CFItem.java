@@ -1,7 +1,7 @@
 package convenientfoundation.item.base;
 
 import convenientfoundation.ConvenientFoundation;
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -24,7 +24,7 @@ import java.util.List;
 
     public CFItem(String name) {
         super();
-        this.setUnlocalizedName(ModConstants.Mod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
+        this.setUnlocalizedName(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
     }
 
     @Override

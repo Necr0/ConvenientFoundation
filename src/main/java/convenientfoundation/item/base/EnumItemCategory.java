@@ -1,6 +1,6 @@
 package convenientfoundation.item.base;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.util.Helper;
 import net.minecraft.util.text.TextFormatting;
 
@@ -31,7 +31,7 @@ public enum EnumItemCategory {
     }
 
     public String getUnlocalizedName(){
-        return "tooltip."+ ModConstants.Mod.MODID+":itemCategory."+getSuffix();
+        return "tooltip."+ LibMod.MODID+":itemCategory."+getSuffix();
     }
 
     public String getLocalizedName(){
@@ -39,6 +39,6 @@ public enum EnumItemCategory {
     }
 
     public void addTooltip(List<String> tooltips){
-        tooltips.add(Helper.localize("tooltip."+ModConstants.Mod.MODID+":itemCategory", TextFormatting.DARK_PURPLE+getLocalizedName()));
+        tooltips.add(Helper.localize("tooltip."+ LibMod.MODID+":itemCategory", TextFormatting.DARK_PURPLE+getLocalizedName()));
     }
 }

@@ -1,7 +1,7 @@
 package convenientfoundation.potion;
 
-import convenientfoundation.ModConstants;
-import convenientfoundation.ModImageResourceLocations;
+import convenientfoundation.libs.LibPotions;
+import convenientfoundation.libs.LibImages;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -17,7 +17,7 @@ public class PotionThorns extends CFPotion {
     public static final PotionThorns INSTANCE=new PotionThorns();
 
     public PotionThorns() {
-        super(ModConstants.PotionNames.thorns, false, 0x800000, ModImageResourceLocations.THORNS);
+        super(LibPotions.thorns, false, 0x800000, LibImages.THORNS);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

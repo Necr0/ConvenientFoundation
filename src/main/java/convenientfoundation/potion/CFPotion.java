@@ -1,6 +1,6 @@
 package convenientfoundation.potion;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.gui.ImageResourceLocation;
 import convenientfoundation.util.GuiHelper;
 import net.minecraft.client.Minecraft;
@@ -19,7 +19,7 @@ public class CFPotion extends Potion {
 
     public CFPotion(String name, boolean isBadEffectIn, int liquidColorIn, @Nullable ImageResourceLocation icon) {
         super(isBadEffectIn, liquidColorIn);
-        this.setPotionName("potion."+ ModConstants.Mod.MODID+":"+name+".name").setRegistryName(name);
+        this.setPotionName("potion."+ LibMod.MODID+":"+name+".name").setRegistryName(name);
         this.icon=icon;
     }
 

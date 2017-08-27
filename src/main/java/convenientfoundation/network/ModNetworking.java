@@ -1,6 +1,6 @@
 package convenientfoundation.network;
 
-import convenientfoundation.ModConstants;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.network.explosion.PacketExtendedExplosion;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class ModNetworking {
-    public static SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(ModConstants.Mod.MODID);
+    public static SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(LibMod.MODID);
 
     public static void init() {
         int i = 0;

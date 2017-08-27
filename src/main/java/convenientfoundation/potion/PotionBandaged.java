@@ -1,7 +1,7 @@
 package convenientfoundation.potion;
 
-import convenientfoundation.ModConstants;
-import convenientfoundation.ModImageResourceLocations;
+import convenientfoundation.libs.LibPotions;
+import convenientfoundation.libs.LibImages;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,7 +15,7 @@ public class PotionBandaged extends CFPotion {
     public static final PotionBandaged INSTANCE=new PotionBandaged();
 
     public PotionBandaged() {
-        super(ModConstants.PotionNames.bandaged, false, 0xFFFFFF, ModImageResourceLocations.BANDAGED);
+        super(LibPotions.bandaged, false, 0xFFFFFF, LibImages.BANDAGED);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
