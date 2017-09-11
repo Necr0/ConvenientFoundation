@@ -1,6 +1,8 @@
 package convenientfoundation;
 
+import convenientfoundation.capabilities.energy.CapabilityEnergyHandler;
 import convenientfoundation.capabilities.energy.EnergyRegistry;
+import convenientfoundation.capabilities.heat.CapabilityHeatVessel;
 import convenientfoundation.entity.ModEntities;
 import convenientfoundation.event.ModEventHandlers;
 import convenientfoundation.item.ModItems;
@@ -43,6 +45,8 @@ public class ConvenientFoundation {
         LOG=event.getModLog();
         configFile=event.getSuggestedConfigurationFile().getAbsolutePath();
         EnergyRegistry.init();
+        CapabilityEnergyHandler.register();
+        CapabilityHeatVessel.register();
         PROXY.registerRenderers();
         ModEventHandlers.init();
         ModNetworking.init();

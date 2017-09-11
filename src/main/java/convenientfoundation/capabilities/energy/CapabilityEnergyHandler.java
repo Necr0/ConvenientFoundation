@@ -6,14 +6,13 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
-import net.minecraftforge.fluids.capability.IFluidHandler;
 
 /**
  * Created by Necro on 8/27/2017.
  */
 public class CapabilityEnergyHandler {
     @CapabilityInject(IEnergyHandler.class)
-    public static Capability<IFluidHandler> ENERGY_HANDLER_CAPABILITY = null;
+    public static Capability<IEnergyHandler> ENERGY_HANDLER_CAPABILITY = null;
 
     public static void register()
     {

@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Necro on 3/8/2017.
  */
 public enum EnumItemCategory {
-    CRAFTING_MATERIAL("craftingMaterial"),
+    CRAFTING_MATERIAL("crafting_material"),
     TRINKET("trinket"),
     RELIC("relic"),
     TOOL("tool"),
@@ -18,7 +18,8 @@ public enum EnumItemCategory {
     MACHINE("machine"),
     MODULE("module"),
     MISC("misc"),
-    BUILDING_BLOCK("buildingBlock");
+    BUILDING_BLOCK("building_block"),
+    DEBUG("debug");
 
     public String name;
 

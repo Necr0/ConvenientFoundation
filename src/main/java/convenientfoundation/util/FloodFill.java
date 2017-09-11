@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Created by Necro on 4/22/2017.
@@ -79,6 +80,7 @@ public class FloodFill {
         public Block block;
         public IBlockState state;
         public Class clazz;
+        public Predicate<IBlockState> predicate;
         public int mode=0;//0=ore,1=Block,2=BlockState
 
         public BlockMatcher(int mode){
@@ -95,6 +97,8 @@ public class FloodFill {
                     return state==this.state;
                 case 3:
                     return clazz.isInstance(state.getBlock());
+                case 4:
+                    return predicate.test(state);
                 default:
                     return false;
             }
@@ -113,6 +117,9 @@ public class FloodFill {
                     break;
                 case 3:
                     clazz=(Class)obj;
+                    break;
+                case 4:
+                    predicate=(Predicate<IBlockState>)obj;
                     break;
             }
             return this;

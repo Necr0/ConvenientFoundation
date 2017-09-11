@@ -13,10 +13,7 @@ public class CenteredLabelMulti implements IWidgetDrawable {
     List<String> texts;
 
     public CenteredLabelMulti(int posX, int posY, List<String> texts){
-        this.texts=texts;
-        this.color=0xFFFFFF;
-        this.posX=posX;
-        this.posY=posY;
+        this(posX,posY,texts,4210752);
     }
 
     public CenteredLabelMulti(int posX, int posY, List<String> texts, int color ){

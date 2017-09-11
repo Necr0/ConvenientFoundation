@@ -18,7 +18,7 @@ public class EnergyBattery implements IEnergyBatteryModifiable, INBTSerializable
 
     @Override
     public void setEnergy(EnergyStack stack) {
-        this.energy=energy;
+        this.energy=stack;
         this.energy.setAmount(Math.min(energy.getAmount(),capacity));
         onContentsChanged();
     }

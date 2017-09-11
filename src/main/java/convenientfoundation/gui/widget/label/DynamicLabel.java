@@ -5,19 +5,22 @@ import convenientfoundation.util.GuiHelper;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.RenderHelper;
 
-public class CenteredLabel implements IWidgetDrawable {
-    int posX,posY,color;
-    String text;
+import java.util.function.Supplier;
 
-    public CenteredLabel(int posX, int posY, String text ){
-        this(posX,posY,text,0xFFFFFF);
+public class DynamicLabel implements IWidgetDrawable {
+    int posX,posY,color;
+    boolean centered=false;
+    Supplier<String> supplier;
+
+    public DynamicLabel(int posX, int posY, Supplier<String> supplier){
+        this(posX,posY,supplier,0xFFFFFF);
     }
 
-    public CenteredLabel(int posX, int posY, String text,int color ){
-        this.text=text;
-        this.color=color;
+    public DynamicLabel(int posX, int posY, Supplier<String> supplier, int color){
         this.posX=posX;
         this.posY=posY;
+        this.color=color;
+        this.supplier=supplier;
     }
 
     @Override
@@ -28,13 +31,17 @@ public class CenteredLabel implements IWidgetDrawable {
     @Override
     public void draw(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
         RenderHelper.disableStandardItemLighting();
-        GuiHelper.getFontRenderer().drawStringWithShadow(text,posX-(getWidth()/2),posY,color);
+        GuiHelper.getFontRenderer().drawString(getText(),posX-(centered?(getWidth()/2):0),posY,color);
         RenderHelper.enableStandardItemLighting();
+    }
+
+    public String getText(){
+        return supplier.get();
     }
 
     @Override
     public int getX() {
-        return posX;
+        return posX - (centered?(getWidth()/2):0);
     }
 
     @Override
@@ -44,16 +51,21 @@ public class CenteredLabel implements IWidgetDrawable {
 
     @Override
     public int getWidth() {
-        return GuiHelper.getFontRenderer().getStringWidth(text);
+        return GuiHelper.getFontRenderer().getStringWidth(getText());
     }
 
     @Override
     public int getHeight() {
-        return 16;
+        return 10;
     }
 
     @Override
     public boolean isVisible() {
         return true;
+    }
+
+    public DynamicLabel setCentered(boolean centered){
+        this.centered=centered;
+        return this;
     }
 }

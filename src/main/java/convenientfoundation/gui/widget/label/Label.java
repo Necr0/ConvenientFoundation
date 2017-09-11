@@ -9,10 +9,7 @@ public class Label implements IWidgetDrawable {
     String text;
 
     public Label(int posX, int posY, String text ){
-        this.text=text;
-        this.color=0xFFFFFF;
-        this.posX=posX;
-        this.posY=posY;
+        this(posX,posY,text,0xFFFFFF);
     }
 
     public Label(int posX, int posY, String text, int color ){

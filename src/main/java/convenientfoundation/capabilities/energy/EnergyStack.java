@@ -1,9 +1,17 @@
 package convenientfoundation.capabilities.energy;
 
+import convenientfoundation.libs.LibMod;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Necro on 7/30/2017.
@@ -14,7 +22,7 @@ public class EnergyStack{
     private int amount;
     private NBTTagCompound tag;
 
-    public EnergyStack(Energy type, int amount){
+    public EnergyStack(@Nonnull Energy type, int amount){
         this.type=type;
         this.amount=amount;
     }
@@ -51,6 +59,41 @@ public class EnergyStack{
         }
         this.amount-=amount;
         return amount;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public List<String> getTooltip(@Nullable World world, int capacity){
+        ArrayList<String> list = new ArrayList<>();
+        list.add(this.getDisplayName(world));
+        type.addInformation(list,world,this);
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.amount/capacity",this.getAmount(),capacity));
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.efficiency",this.getEfficiency(world)));
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.entropy",this.getEntropy(world)));
+        return list;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public List<String> getTooltip(@Nullable World world){
+        ArrayList<String> list = new ArrayList<>();
+        list.add(this.getDisplayName(world));
+        type.addInformation(list,world,this);
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.amount",this.getAmount()));
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.efficiency",this.getEfficiency(world)));
+        list.add(I18n.format("tooltip."+ LibMod.MODID +":energy.entropy",this.getEntropy(world)));
+        return list;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public String getDisplayName(@Nullable World world){
+        return type.getDisplayName(world,this);
+    }
+
+    public float getEfficiency(@Nullable World world){
+        return type.getEfficiency(world,this);
+    }
+
+    public float getEntropy(@Nullable World world){
+        return type.getEntropy(world,this);
     }
 
     //the stack should be replaced with null if it is empty

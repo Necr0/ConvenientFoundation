@@ -2,7 +2,19 @@
 
 item.convfound:wrench.name=Wrench
 item.convfound:slime_bucket.name=Slime Bucket
+item.convfound:block_probe.name=Block Probe
+item.convfound:heat_probe.name=Heat Probe
 
+
+### ENERGY ###
+
+energy.convfound:redstone.name=Redstone Energy
+energy.convfound:ender.name=Ender Energy
+
+tooltip.convfound:energy.amount=Amount: %d
+tooltip.convfound:energy.amount/capacity=Amount: %d/%d
+tooltip.convfound:energy.efficiency=Efficiency: %d
+tooltip.convfound:energy.entropy=Entropy: %d
 
 
 ### POTION NAMES ###
@@ -41,7 +53,16 @@ tooltip.convfound:showRecipes=Show Recipes
 tooltip.convfound:shiftInfo=<Hold shift for more information>
 tooltip.convfound:baublesRequired=The Baubles mod is required for this item to be functional. If you wish to use it install the Baubles mod.
 
+### GUI ###
 
+gui.convfound:blockprobe.pos=Position: [%d, %d, %d]
+gui.convfound:blockprobe.tile.state=State: %s
+gui.convfound:blockprobe.tile.class=Class: %s
+gui.convfound:blockprobe.tileentity.name=TE: %s
+gui.convfound:blockprobe.tileentity.class=TE Class: %s
+gui.convfound:blockprobe.oredict=OreDict: %s
+gui.convfound:heatprobe.heat=Heat: %.2f/%.2f
+gui.convfound:heatprobe.conductivity=Thermal Conductivity: %.3f
 
 ### GENERAL ###
 
@@ -72,7 +93,18 @@ convfound:whitelist=Whitelist
 convfound:page=Page
 convfound:done=Done
 convfound:range=Range
-convfound:unit.blocks=blocks
+unit.convfound:blocks=blocks
+unit.convfound:blocks.suffix=%d blocks
+unit.convfound:hu=HU
+unit.convfound:hu.suffix=%.2fHU
+unit.convfound:heatunits=Heat Units
+unit.convfound:heatunits.suffix=%.2f Heat Units
+unit.convfound:heatunits/critical.suffix=%.2f/%.2f Heat Units
+unit.convfound:eu=EU
+unit.convfound:eu.suffix=%dEU
+unit.convfound:energyunits=Energy Units
+unit.convfound:energyunits.suffix=%d Energy Units
+unit.convfound:energyunits/capacity.suffix=%d/%d Energy Units
 #
 convfound:none=None
 convfound:yes=Yes

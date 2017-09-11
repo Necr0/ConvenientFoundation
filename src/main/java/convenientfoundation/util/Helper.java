@@ -3,6 +3,7 @@ package convenientfoundation.util;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.resources.I18n;
@@ -71,6 +72,11 @@ public class Helper {
 	}
 
 	@SideOnly(Side.CLIENT)
+	public static Minecraft getMinecraft(){
+		return FMLClientHandler.instance().getClient();
+	}
+
+	@SideOnly(Side.CLIENT)
 	public static String localize(String in,Object... replace){
 		return I18n.format(in, replace);
 	}
@@ -121,6 +127,21 @@ public class Helper {
 			}
 		}
 		return null;
+	}
+
+	public static List<String> getBlockOreDict(IBlockState b){
+		ArrayList<String> ret=new ArrayList<>();
+		for(String ore:OreDictionary.getOreNames()){
+			for(ItemStack stack:OreDictionary.getOres(ore)){
+				if(stack.getItem() instanceof ItemBlock){
+					ItemBlock ib=(ItemBlock)stack.getItem();
+					if(ib.getBlock()==b.getBlock()){
+						ret.add(ore);
+					}
+				}
+			}
+		}
+		return ret;
 	}
 
 	public static void insertOrDrop(EntityPlayer p,ItemStack stack){

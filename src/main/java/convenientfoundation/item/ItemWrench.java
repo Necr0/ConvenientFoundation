@@ -1,14 +1,11 @@
 package convenientfoundation.item;
 
-import convenientfoundation.libs.LibItems;
-import convenientfoundation.block.wrench.IConfigurable;
-import convenientfoundation.block.wrench.IDismantleable;
+import convenientfoundation.gui.test.GuiEnergyViewTest;
 import convenientfoundation.item.base.CFItem;
 import convenientfoundation.item.base.EnumItemCategory;
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import convenientfoundation.libs.LibItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -28,7 +25,9 @@ public class ItemWrench extends CFItem {
 
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
-        IBlockState state = world.getBlockState(pos);
+        if(world.isRemote)
+            Minecraft.getMinecraft().displayGuiScreen(new GuiEnergyViewTest());
+        /*IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         if (block != null) {
             if (!player.isSneaking()) {
@@ -63,7 +62,7 @@ public class ItemWrench extends CFItem {
                     return EnumActionResult.PASS;
                 }
             }
-        }
+        }*/
         return EnumActionResult.FAIL;
     }
 }
