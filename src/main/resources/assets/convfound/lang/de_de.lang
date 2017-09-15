@@ -1,0 +1,144 @@
+### ITEMS ###
+
+item.convfound:wrench.name=Schraubenschlüssel
+item.convfound:slime_bucket.name=Schleimeimer
+item.convfound:magma_cube_bucket.name=Magmawürfeleimer
+item.convfound:block_probe.name=Blocksonde
+item.convfound:heat_probe.name=Hitzesonde
+item.convfound:ender_heart.name=Enderherz
+item.convfound:molten_core.name=Geschmolzener Kern
+item.convfound:arcane_dust.name=Arkanstaub
+item.convfound:dragon_scale.name=Drachenschuppe
+item.convfound:geode.name=Geode
+item.convfound:iron_rod.name=Eisenstange
+item.convfound:gold_rod.name=Goldstange
+item.convfound:diamond_shard.name=Diamantscherbe
+item.convfound:emerald_shard.name=Smaragdscherbe
+
+### ENTITIES ###
+
+entity.undead_miner.name=Untoter Minenarbeiter
+
+
+### ENERGY ###
+
+energy.convfound:redstone.name=Redstone-Energie
+energy.convfound:ender.name=Ender Energy
+
+tooltip.convfound:energy.amount=Menge: %d
+tooltip.convfound:energy.amount/capacity=Menge: %d/%d
+tooltip.convfound:energy.efficiency=Effizienz: %d
+tooltip.convfound:energy.entropy=Entropie: %d
+
+
+### POTION NAMES ###
+
+potion.convfound:lumbering.name=Holzfällen
+potion.convfound:thorns.name=Dornen
+potion.convfound:bandaged.name=Bandagiert
+
+
+
+### ITEM GROUPS ###
+
+itemGroup.convfound=Convenient Foundation
+
+
+
+### TOOLTIPS ###
+
+## Info
+tooltip.convfound:wrench.info=Zum rotieren, konfigurieren und zerlegen verwendet.
+
+## Item Categories
+tooltip.convfound:itemCategory=Item-Kategorie: %s
+tooltip.convfound:itemCategory.resource=Ressource
+tooltip.convfound:itemCategory.crafting_material=Werkstoff
+tooltip.convfound:itemCategory.trinket=Gedöns
+tooltip.convfound:itemCategory.relic=Relikt
+tooltip.convfound:itemCategory.tool=Werkzeug
+tooltip.convfound:itemCategory.consumable=Konsumierbares
+tooltip.convfound:itemCategory.machine=Maschine
+tooltip.convfound:itemCategory.module=Modul
+tooltip.convfound:itemCategory.misc=Sonstiges
+tooltip.convfound:itemCategory.building_block=Bau-Block
+tooltip.convfound:itemCategory.debug=DEBUG
+
+## Misc
+tooltip.convfound:show_recipes=Zeige Rezepte
+tooltip.convfound:shift_info=<Halte Shift für mehr Informationen>
+tooltip.convfound:baubles_required=Dieser Gegenstand benötigt die Baubles-Mod um seine Funktion erfüllen zu können.
+
+### GUI ###
+
+gui.convfound:blockprobe.pos=Position: [%d, %d, %d]
+gui.convfound:blockprobe.tile.state=Zustand: %s
+gui.convfound:blockprobe.tile.class=Klasse: %s
+gui.convfound:blockprobe.tileentity.name=TE: %s
+gui.convfound:blockprobe.tileentity.class=TE-Klasse: %s
+gui.convfound:blockprobe.oredict=OreDict: %s
+gui.convfound:heatprobe.heat=Hitze: %.2f/%.2f
+
+### GENERAL ###
+
+## Redstone
+convfound:highrs=Hohes Redstone-Signal
+convfound:lowrs=Niedriges Redstone-Signal
+convfound:pulsers=Redstone-Puls
+convfound:ignorers=Ignoriere Redstone
+
+## Imperatives
+convfound:match=Vergleiche %s.
+convfound:ignore=Ignoriere %s.
+convfound:filter=Filtere %s.
+convfound:filterNot=Filtere nicht %s.
+convfound:restrict=Beschränke %s.
+convfound:restrictNot=Beschränke %s.
+
+## Common
+convfound:damageValue=Schadenswert
+convfound:NBT=NBT
+#
+convfound:input=Input
+convfound:output=Output
+#
+convfound:blacklist=Blacklist
+convfound:whitelist=Whitelist
+#
+convfound:page=Seite
+convfound:done=Fertig
+convfound:range=Reichweite
+unit.convfound:blocks=Blöcke
+unit.convfound:blocks.suffix=%d Blöcke
+unit.convfound:hu=HE
+unit.convfound:hu.suffix=%.2fHE
+unit.convfound:heatunits=Hitzeeinheiten
+unit.convfound:heatunits.suffix=%.2f Hitzeeinheiten
+unit.convfound:heatunits/critical.suffix=%.2f/%.2f Hitzeeinheiten
+unit.convfound:eu=EE
+unit.convfound:eu.suffix=%dEE
+unit.convfound:energyunits=Energieeinheiten
+unit.convfound:energyunits.suffix=%d Energieeinheiten
+unit.convfound:energyunits/capacity.suffix=%d/%d Energieeinheiten
+#
+convfound:none=Keine
+convfound:yes=Ja
+convfound:no=Nein
+
+## Colors
+color.convfound:black=Schwarz
+color.convfound:red=Rot
+color.convfound:green=Grün
+color.convfound:brown=Braun
+color.convfound:blue=Blau
+color.convfound:purple=Lila
+color.convfound:cyan=Cyan
+color.convfound:silver=Hellgrau
+color.convfound:gray=Grau
+color.convfound:pink=Rosa
+color.convfound:lime=Hellgrün
+color.convfound:yellow=Gelb
+color.convfound:lightBlue=Hellblau
+color.convfound:magenta=Magenta
+color.convfound:orange=Orange
+color.convfound:white=Weiß

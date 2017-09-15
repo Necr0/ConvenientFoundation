@@ -6,7 +6,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -74,11 +73,6 @@ public class Helper {
 	@SideOnly(Side.CLIENT)
 	public static Minecraft getMinecraft(){
 		return FMLClientHandler.instance().getClient();
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static String localize(String in,Object... replace){
-		return I18n.format(in, replace);
 	}
 
 	public static boolean doesOreDictMatch(IBlockState b,String entry,boolean startsWith){

@@ -6,6 +6,7 @@ import convenientfoundation.capabilities.heat.CapabilityHeatVessel;
 import convenientfoundation.entity.ModEntities;
 import convenientfoundation.event.ModEventHandlers;
 import convenientfoundation.item.ModItems;
+import convenientfoundation.loot.ModLoot;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.network.ModNetworking;
 import convenientfoundation.proxy.CommonProxy;
@@ -50,6 +51,7 @@ public class ConvenientFoundation {
         PROXY.registerRenderers();
         ModEventHandlers.init();
         ModNetworking.init();
+        ModLoot.init();
     }
 
     @Mod.EventHandler

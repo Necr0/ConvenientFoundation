@@ -1,0 +1,32 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "convfound:emerald"
+        ]
+    },
+    "criteria": {
+        "has_shard": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "convfound:emerald_shard"
+                    }
+                ]
+            }
+        },
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "convfound:emerald"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_shard",
+            "has_the_recipe"
+        ]
+    ]
+}

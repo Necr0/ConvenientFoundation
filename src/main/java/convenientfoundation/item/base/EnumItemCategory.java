@@ -1,7 +1,7 @@
 package convenientfoundation.item.base;
 
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.Helper;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.util.text.TextFormatting;
 
 import java.util.List;
@@ -10,6 +10,7 @@ import java.util.List;
  * Created by Necro on 3/8/2017.
  */
 public enum EnumItemCategory {
+    RESOURCE("resource"),
     CRAFTING_MATERIAL("crafting_material"),
     TRINKET("trinket"),
     RELIC("relic"),
@@ -36,10 +37,10 @@ public enum EnumItemCategory {
     }
 
     public String getLocalizedName(){
-        return Helper.localize(getUnlocalizedName());
+        return I18n.format(getUnlocalizedName());
     }
 
     public void addTooltip(List<String> tooltips){
-        tooltips.add(Helper.localize("tooltip."+ LibMod.MODID+":itemCategory", TextFormatting.DARK_PURPLE+getLocalizedName()));
+        tooltips.add(I18n.format("tooltip."+ LibMod.MODID+":itemCategory", TextFormatting.DARK_PURPLE+getLocalizedName()));
     }
 }

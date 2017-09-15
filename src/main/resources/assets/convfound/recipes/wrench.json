@@ -1,0 +1,21 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "# #",
+        " i ",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "type": "forge:ore_dict",
+            "ore": "nuggetIron"
+        },
+        "i": {
+            "type": "forge:ore_dict",
+            "ore": "ingotIron"
+        }
+    },
+    "result": {
+        "item": "convfound:wrench"
+    }
+}

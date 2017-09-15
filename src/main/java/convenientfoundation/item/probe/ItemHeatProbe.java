@@ -22,7 +22,7 @@ public class ItemHeatProbe extends CFItem {
     public ItemHeatProbe() {
         super(LibItems.heat_probe);
         this.setMaxStackSize(1);
-        this.setCategory(EnumItemCategory.TOOL).setDefaultInfo(false);
+        this.setCategory(EnumItemCategory.DEBUG).setDefaultInfo(false);
     }
 
     @Override

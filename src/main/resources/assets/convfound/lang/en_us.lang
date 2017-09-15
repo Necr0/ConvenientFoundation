@@ -2,9 +2,22 @@
 
 item.convfound:wrench.name=Wrench
 item.convfound:slime_bucket.name=Slime Bucket
+item.convfound:magma_cube_bucket.name=Magma Cube Bucket
 item.convfound:block_probe.name=Block Probe
 item.convfound:heat_probe.name=Heat Probe
+item.convfound:ender_heart.name=Ender Heart
+item.convfound:molten_core.name=Molten Core
+item.convfound:arcane_dust.name=Arcane Dust
+item.convfound:dragon_scale.name=Dragon Scale
+item.convfound:geode.name=Geode
+item.convfound:iron_rod.name=Iron Rod
+item.convfound:gold_rod.name=Gold Rod
+item.convfound:diamond_shard.name=Diamond Shard
+item.convfound:emerald_shard.name=Emerald Shard
 
+### ENTITIES ###
+
+entity.undead_miner.name=Undead Miner
 
 ### ENERGY ###
 
@@ -38,7 +51,8 @@ tooltip.convfound:wrench.info=Used for rotating, configuring & dismantling.
 
 ## Item Categories
 tooltip.convfound:itemCategory=Item Category: %s
-tooltip.convfound:itemCategory.craftingMaterial=Crafting Material
+tooltip.convfound:itemCategory.resource=Resource
+tooltip.convfound:itemCategory.crafting_material=Crafting Material
 tooltip.convfound:itemCategory.trinket=Trinket
 tooltip.convfound:itemCategory.relic=Relic
 tooltip.convfound:itemCategory.tool=Tool
@@ -46,12 +60,13 @@ tooltip.convfound:itemCategory.consumable=Consumable
 tooltip.convfound:itemCategory.machine=Machine
 tooltip.convfound:itemCategory.module=Module
 tooltip.convfound:itemCategory.misc=Miscellaneous
-tooltip.convfound:itemCategory.buildingBlock=Building Block
+tooltip.convfound:itemCategory.building_block=Building Block
+tooltip.convfound:itemCategory.debug=DEBUG
 
 ## Misc
-tooltip.convfound:showRecipes=Show Recipes
-tooltip.convfound:shiftInfo=<Hold shift for more information>
-tooltip.convfound:baublesRequired=The Baubles mod is required for this item to be functional. If you wish to use it install the Baubles mod.
+tooltip.convfound:show_recipes=Show Recipes
+tooltip.convfound:shift_info=<Hold shift for more information>
+tooltip.convfound:baubles_required=The Baubles mod is required for this item to be functional. If you wish to use it install the Baubles mod.
 
 ### GUI ###
 

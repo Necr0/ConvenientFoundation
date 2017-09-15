@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "convfound:slime_harvest",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "convfound:slime_bucket",
+            "data": 1
+        }
+    },
+    "result": {
+        "item": "minecraft:magma_cream"
+    }
+}

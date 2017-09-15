@@ -19,7 +19,7 @@ public class ItemBlockProbe extends CFItem {
     public ItemBlockProbe() {
         super(LibItems.block_probe);
         this.setMaxStackSize(1);
-        this.setCategory(EnumItemCategory.TOOL).setDefaultInfo(false);
+        this.setCategory(EnumItemCategory.DEBUG).setDefaultInfo(false);
     }
 
     @Override
