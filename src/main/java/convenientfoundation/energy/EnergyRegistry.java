@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy;
 
 import convenientfoundation.ConvenientFoundation;
 import convenientfoundation.libs.LibRegistries;

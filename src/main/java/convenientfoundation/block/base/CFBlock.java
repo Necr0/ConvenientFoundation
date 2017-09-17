@@ -1,9 +1,12 @@
-package convenientfoundation.item.base;
+package convenientfoundation.block.base;
 
 import convenientfoundation.ConvenientFoundation;
+import convenientfoundation.item.base.EnumItemCategory;
+import convenientfoundation.item.base.StringHelper;
 import convenientfoundation.libs.LibMod;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
@@ -15,7 +18,7 @@ import java.util.List;
 /**
  * Created by Necro on 7/22/2017.
  */
-public class CFItem extends Item {
+public class CFBlock extends Block {
 
     protected boolean defaultInfo=true;
     protected boolean defaultAdditionalInfo=false;
@@ -23,8 +26,8 @@ public class CFItem extends Item {
     protected boolean baublesRequiredInfo=false;
     protected EnumItemCategory category=null;
 
-    public CFItem(String name) {
-        super();
+    public CFBlock(String name, Material material) {
+        super(material);
         this.setUnlocalizedName(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
     }
 
@@ -44,27 +47,27 @@ public class CFItem extends Item {
         super.addInformation(stack,player,tooltip,advanced);
     }
 
-    public CFItem setDefaultInfo(boolean defaultInfo) {
+    public CFBlock setDefaultInfo(boolean defaultInfo) {
         this.defaultInfo = defaultInfo;
         return this;
     }
 
-    public CFItem setDefaultAdditionalInfo(boolean defaultAdditionalInfo) {
+    public CFBlock setDefaultAdditionalInfo(boolean defaultAdditionalInfo) {
         this.defaultAdditionalInfo = defaultAdditionalInfo;
         return this;
     }
 
-    public CFItem setDefaultJoke(boolean defaultJoke) {
+    public CFBlock setDefaultJoke(boolean defaultJoke) {
         this.defaultJoke = defaultJoke;
         return this;
     }
 
-    public CFItem setCategory(EnumItemCategory category) {
+    public CFBlock setCategory(EnumItemCategory category) {
         this.category=category;
         return this;
     }
 
-    public CFItem setBaublesRequiredInfo(boolean baublesRequiredInfo) {
+    public CFBlock setBaublesRequiredInfo(boolean baublesRequiredInfo) {
         this.baublesRequiredInfo = baublesRequiredInfo;
         return this;
     }

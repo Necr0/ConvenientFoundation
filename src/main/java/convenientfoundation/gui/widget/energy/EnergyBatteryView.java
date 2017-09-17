@@ -1,8 +1,8 @@
 package convenientfoundation.gui.widget.energy;
 
-import convenientfoundation.capabilities.energy.EnergyRegistry;
-import convenientfoundation.capabilities.energy.EnergyStack;
-import convenientfoundation.capabilities.energy.IEnergyBattery;
+import convenientfoundation.energy.EnergyRegistry;
+import convenientfoundation.energy.EnergyStack;
+import convenientfoundation.energy.capability.IEnergyBattery;
 import convenientfoundation.gui.widget.IWidgetDrawable;
 import convenientfoundation.gui.widget.IWidgetTooltip;
 import convenientfoundation.libs.LibImages;

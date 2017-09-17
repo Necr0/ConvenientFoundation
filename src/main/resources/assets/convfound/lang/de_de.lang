@@ -15,9 +15,13 @@ item.convfound:gold_rod.name=Goldstange
 item.convfound:diamond_shard.name=Diamantscherbe
 item.convfound:emerald_shard.name=Smaragdscherbe
 
+### BLOCKS ###
+
+tile.convfound:arcane_block.name=Arkanblock
+
 ### ENTITIES ###
 
-entity.undead_miner.name=Untoter Minenarbeiter
+entity.convfound:undead_miner.name=Untoter Minenarbeiter
 
 
 ### ENERGY ###

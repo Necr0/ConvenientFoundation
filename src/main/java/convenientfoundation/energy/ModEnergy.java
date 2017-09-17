@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy;
 
 import convenientfoundation.libs.LibEnergy;
 import convenientfoundation.libs.LibMod;

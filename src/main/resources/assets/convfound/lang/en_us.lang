@@ -15,9 +15,13 @@ item.convfound:gold_rod.name=Gold Rod
 item.convfound:diamond_shard.name=Diamond Shard
 item.convfound:emerald_shard.name=Emerald Shard
 
+### BLOCKS ###
+
+tile.convfound:arcane_block.name=Arcane Block
+
 ### ENTITIES ###
 
-entity.undead_miner.name=Undead Miner
+entity.convfound:undead_miner.name=Undead Miner
 
 ### ENERGY ###
 

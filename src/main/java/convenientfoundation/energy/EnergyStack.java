@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy;
 
 import convenientfoundation.libs.LibMod;
 import net.minecraft.client.resources.I18n;

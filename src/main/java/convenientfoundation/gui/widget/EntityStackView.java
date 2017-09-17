@@ -1,9 +1,7 @@
-package convenientfoundation.gui.widget.energy;
+package convenientfoundation.gui.widget;
 
-import convenientfoundation.energy.EnergyRegistry;
-import convenientfoundation.energy.EnergyStack;
-import convenientfoundation.gui.widget.IWidgetDrawable;
-import convenientfoundation.gui.widget.IWidgetTooltip;
+import convenientfoundation.capabilities.entity.EntityStack;
+import convenientfoundation.capabilities.entity.EntityTypeRegistry;
 import convenientfoundation.libs.LibRegistries;
 import convenientfoundation.util.GuiHelper;
 import convenientfoundation.util.Helper;
@@ -18,44 +16,44 @@ import java.util.List;
 /**
  * Created by Necro on 8/28/2017.
  */
-public class EnergyStackView implements IWidgetDrawable, IWidgetTooltip {
+public class EntityStackView implements IWidgetDrawable, IWidgetTooltip {
 
-    public EnergyStack energyStack;
+    public EntityStack entityStack;
     int posX,posY;
 
-    public EnergyStackView(EnergyStack stack, int posX, int posY){
-        this.energyStack=stack;
+    public EntityStackView(EntityStack stack, int posX, int posY){
+        this.entityStack=stack;
         this.posX=posX;
         this.posY=posY;
     }
 
     @Override
     public boolean hasTooltip(GuiScreen guiScreen) {
-        return energyStack!=null;
+        return entityStack!=null;
     }
 
     @Override
     public List<String> getTooltip(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        return energyStack.getTooltip(Helper.getClientWorld());
+        return entityStack.getTooltip(Helper.getClientWorld());
     }
 
     @Override
     public boolean isDrawable(GuiScreen guiScreen) {
-        return energyStack!=null;
+        return entityStack!=null;
     }
 
     @Override
     public void draw(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        drawEnergy(guiScreen, posX, posY, energyStack);
+        drawEntity(guiScreen, posX, posY, entityStack);
     }
 
-    public void drawEnergy(GuiScreen guiScreen, int x, int y, EnergyStack stack){
+    public void drawEntity(GuiScreen guiScreen, int x, int y, EntityStack stack){
         if (stack == null) {
             return;
         }
-        TextureAtlasSprite energySprite = EnergyRegistry.getEnergySprite(stack.getType());
-        guiScreen.mc.renderEngine.bindTexture(LibRegistries.ENERGY_TEXTURE_LOCATION);
-        GuiHelper.renderTAS(energySprite,x,y,300);
+        TextureAtlasSprite entitySprite = EntityTypeRegistry.getEntitySprite(stack.getType());
+        guiScreen.mc.renderEngine.bindTexture(LibRegistries.ENTITY_TEXTURE_LOCATION);
+        GuiHelper.renderTAS(entitySprite,x,y,300);
 
         GlStateManager.disableLighting();
         GlStateManager.disableDepth();
@@ -97,6 +95,6 @@ public class EnergyStackView implements IWidgetDrawable, IWidgetTooltip {
 
     @Override
     public boolean isVisible() {
-        return energyStack!=null;
+        return entityStack!=null;
     }
 }

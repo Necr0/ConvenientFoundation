@@ -1,6 +1,7 @@
 package convenientfoundation.proxy;
 
-import convenientfoundation.capabilities.energy.EnergyRegistry;
+import convenientfoundation.energy.EnergyRegistry;
+import convenientfoundation.capabilities.entity.EntityTypeRegistry;
 import convenientfoundation.entity.undeadMiner.EntityUndeadMiner;
 import convenientfoundation.entity.undeadMiner.RenderUndeadMiner;
 import net.minecraft.world.World;
@@ -26,6 +27,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerReloadableResources(){
         EnergyRegistry.initTextureMap();
+        EntityTypeRegistry.initTextureMap();
     }
 }
 

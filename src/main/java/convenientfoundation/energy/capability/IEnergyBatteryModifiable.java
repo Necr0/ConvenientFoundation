@@ -1,4 +1,6 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy.capability;
+
+import convenientfoundation.energy.EnergyStack;
 
 public interface IEnergyBatteryModifiable extends IEnergyBattery
 {

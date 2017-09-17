@@ -2,10 +2,12 @@ package convenientfoundation.item.probe;
 
 import convenientfoundation.capabilities.heat.CapabilityHeatVessel;
 import convenientfoundation.capabilities.heat.IHeatVessel;
+import convenientfoundation.gui.test.GuiEnergyViewTest;
 import convenientfoundation.item.base.CFItem;
 import convenientfoundation.item.base.EnumItemCategory;
 import convenientfoundation.libs.LibItems;
 import convenientfoundation.util.Helper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
@@ -28,7 +30,9 @@ public class ItemHeatProbe extends CFItem {
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if(worldIn.isRemote){
+        if(worldIn.isRemote)
+            Helper.getMinecraft().displayGuiScreen(new GuiEnergyViewTest());
+        /*if(worldIn.isRemote){
             TileEntity te=worldIn.getTileEntity(pos);
             if(te!=null){
                 IHeatVessel accumulator;
@@ -41,7 +45,7 @@ public class ItemHeatProbe extends CFItem {
                 Helper.getMinecraft().displayGuiScreen(new GuiHeatProbe(pos,te,accumulator));
                 return EnumActionResult.SUCCESS;
             }
-        }
+        }*/
         return EnumActionResult.FAIL;
     }
 }

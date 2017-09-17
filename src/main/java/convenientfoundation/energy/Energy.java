@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +38,6 @@ public class Energy extends IForgeRegistryEntry.Impl<Energy>{
         return texture;
     }
 
-
     public Energy setUnlocalizedName(String unlocalizedName)
     {
         this.unlocalizedName = unlocalizedName;
@@ -48,6 +47,12 @@ public class Energy extends IForgeRegistryEntry.Impl<Energy>{
     public Energy setUnlocalizedName(String domain,String name)
     {
         this.unlocalizedName = "energy."+domain+":"+name+".name";
+        return this;
+    }
+
+    public Energy setUnlocalizedName(ResourceLocation rl)
+    {
+        this.unlocalizedName = "energy."+rl.getResourceDomain()+":"+rl.getResourcePath()+".name";
         return this;
     }
 

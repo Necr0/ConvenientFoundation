@@ -30,6 +30,6 @@ public class StringHelper {
 
     @SideOnly(Side.CLIENT)
     public static String getHint(String loc, String... rep){
-        return TextFormatting.DARK_GRAY+I18n.format(loc,rep);
+        return TextFormatting.DARK_GRAY+I18n.format(loc,(Object[]) rep);
     }
 }

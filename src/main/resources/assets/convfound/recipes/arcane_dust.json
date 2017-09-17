@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "type": "forge:ore_dict",
+            "ore": "blockArcane"
+        }
+    },
+    "result": {
+        "item": "convfound:arcane_dust",
+        "count": 9
+    }
+}

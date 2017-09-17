@@ -1,7 +1,8 @@
 package convenientfoundation;
 
-import convenientfoundation.capabilities.energy.CapabilityEnergyHandler;
-import convenientfoundation.capabilities.energy.EnergyRegistry;
+import convenientfoundation.energy.capability.CapabilityEnergyHandler;
+import convenientfoundation.energy.EnergyRegistry;
+import convenientfoundation.capabilities.entity.EntityTypeRegistry;
 import convenientfoundation.capabilities.heat.CapabilityHeatVessel;
 import convenientfoundation.entity.ModEntities;
 import convenientfoundation.event.ModEventHandlers;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
@@ -46,6 +48,7 @@ public class ConvenientFoundation {
         LOG=event.getModLog();
         configFile=event.getSuggestedConfigurationFile().getAbsolutePath();
         EnergyRegistry.init();
+        EntityTypeRegistry.init();
         CapabilityEnergyHandler.register();
         CapabilityHeatVessel.register();
         PROXY.registerRenderers();
@@ -58,5 +61,9 @@ public class ConvenientFoundation {
     public void init(FMLInitializationEvent event) {
         ModEntities.init();
         PROXY.registerReloadableResources();
+    }
+
+    @Mod.EventHandler
+    public void postinit(FMLPostInitializationEvent event) {
     }
 }

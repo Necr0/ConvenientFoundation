@@ -74,7 +74,7 @@ public class EntityUndeadMiner extends EntityZombie
     {
         super.setEquipmentBasedOnDifficulty(difficulty);
 
-        ItemStack pickaxe=ItemStack.EMPTY;
+        ItemStack pickaxe;
         int pickaxe_level=this.rand.nextInt(18);
         if(pickaxe_level<7)
             pickaxe=new ItemStack(Items.WOODEN_PICKAXE);

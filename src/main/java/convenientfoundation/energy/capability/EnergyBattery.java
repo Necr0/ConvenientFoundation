@@ -1,5 +1,6 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy.capability;
 
+import convenientfoundation.energy.EnergyStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.INBTSerializable;
 

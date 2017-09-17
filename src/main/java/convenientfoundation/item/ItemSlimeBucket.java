@@ -60,7 +60,7 @@ public class ItemSlimeBucket extends CFItem {
             else
                 return;
 
-            target.attackEntityFrom(DamageSource.STARVE,1f+event.getWorld().rand.nextFloat());
+            target.attackEntityFrom(DamageSource.STARVE,1.2f+event.getWorld().rand.nextFloat());
 
             if (stack.isEmpty())
             {

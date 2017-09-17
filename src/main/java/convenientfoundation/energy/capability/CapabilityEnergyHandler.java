@@ -1,4 +1,4 @@
-package convenientfoundation.capabilities.energy;
+package convenientfoundation.energy.capability;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
