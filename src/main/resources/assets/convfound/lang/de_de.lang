@@ -23,7 +23,6 @@ tile.convfound:arcane_block.name=Arkanblock
 
 entity.convfound:undead_miner.name=Untoter Minenarbeiter
 
-
 ### ENERGY ###
 
 energy.convfound:redstone.name=Redstone-Energie
@@ -34,20 +33,21 @@ tooltip.convfound:energy.amount/capacity=Menge: %d/%d
 tooltip.convfound:energy.efficiency=Effizienz: %d
 tooltip.convfound:energy.entropy=Entropie: %d
 
-
 ### POTION NAMES ###
 
 potion.convfound:lumbering.name=Holzfällen
 potion.convfound:thorns.name=Dornen
 potion.convfound:bandaged.name=Bandagiert
 
+### ENCHANTMENTS
 
+enchantment.convfound:draining_curse=Fluch des Vergessens
+enchantment.convfound:harming_curse=Fluch des Leidens
+enchantment.convfound:everlasting=Ewig
 
 ### ITEM GROUPS ###
 
 itemGroup.convfound=Convenient Foundation
-
-
 
 ### TOOLTIPS ###
 

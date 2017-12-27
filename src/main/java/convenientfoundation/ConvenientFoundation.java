@@ -1,15 +1,15 @@
 package convenientfoundation;
 
-import convenientfoundation.energy.capability.CapabilityEnergyHandler;
-import convenientfoundation.energy.EnergyRegistry;
-import convenientfoundation.capabilities.entity.EntityTypeRegistry;
-import convenientfoundation.capabilities.heat.CapabilityHeatVessel;
-import convenientfoundation.entity.ModEntities;
-import convenientfoundation.event.ModEventHandlers;
-import convenientfoundation.item.ModItems;
-import convenientfoundation.loot.ModLoot;
+import convenientfoundation.common.capabilities.entity.CapabilityEntityHandler;
+import convenientfoundation.common.energy.capability.CapabilityEnergyHandler;
+import convenientfoundation.common.energy.EnergyRegistry;
+import convenientfoundation.common.entity.stack.EntityTypeRegistry;
+import convenientfoundation.common.capabilities.heat.CapabilityHeatVessel;
+import convenientfoundation.common.entity.ModEntities;
+import convenientfoundation.common.item.ModItems;
+import convenientfoundation.common.loot.ModLoot;
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.network.ModNetworking;
+import convenientfoundation.common.network.ModNetworking;
 import convenientfoundation.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -19,6 +19,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+
+import java.io.File;
 
 
 /**
@@ -41,18 +43,20 @@ public class ConvenientFoundation {
         }
     };
 
+    public static File configDirectory;
     public static String configFile;
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event){
         LOG=event.getModLog();
+        configDirectory=event.getModConfigurationDirectory();
         configFile=event.getSuggestedConfigurationFile().getAbsolutePath();
         EnergyRegistry.init();
         EntityTypeRegistry.init();
         CapabilityEnergyHandler.register();
+        CapabilityEntityHandler.register();
         CapabilityHeatVessel.register();
         PROXY.registerRenderers();
-        ModEventHandlers.init();
         ModNetworking.init();
         ModLoot.init();
     }
@@ -60,10 +64,10 @@ public class ConvenientFoundation {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         ModEntities.init();
-        PROXY.registerReloadableResources();
     }
 
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
+        //PROXY.registerReloadableResources();
     }
 }

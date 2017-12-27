@@ -1,6 +1,6 @@
 package convenientfoundation.util;
 
-import convenientfoundation.gui.ImageResourceLocation;
+import convenientfoundation.client.gui.ImageResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundHandler;

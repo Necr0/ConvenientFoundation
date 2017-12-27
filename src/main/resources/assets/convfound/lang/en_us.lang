@@ -33,20 +33,21 @@ tooltip.convfound:energy.amount/capacity=Amount: %d/%d
 tooltip.convfound:energy.efficiency=Efficiency: %d
 tooltip.convfound:energy.entropy=Entropy: %d
 
-
 ### POTION NAMES ###
 
 potion.convfound:lumbering.name=Lumbering
 potion.convfound:thorns.name=Thorns
 potion.convfound:bandaged.name=Bandaged
 
+### ENCHANTMENTS
 
+enchantment.convfound:draining_curse=Curse of Draining
+enchantment.convfound:harming_curse=Curse of Suffering
+enchantment.convfound:everlasting=Everlasting
 
 ### ITEM GROUPS ###
 
 itemGroup.convfound=Convenient Foundation
-
-
 
 ### TOOLTIPS ###
 

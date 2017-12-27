@@ -1,9 +1,11 @@
 package convenientfoundation.proxy;
 
-import convenientfoundation.energy.EnergyRegistry;
-import convenientfoundation.capabilities.entity.EntityTypeRegistry;
-import convenientfoundation.entity.undeadMiner.EntityUndeadMiner;
-import convenientfoundation.entity.undeadMiner.RenderUndeadMiner;
+import convenientfoundation.common.energy.EnergyRegistry;
+import convenientfoundation.common.entity.stack.EntityTypeRegistry;
+import convenientfoundation.common.entity.undeadMiner.EntityUndeadMiner;
+import convenientfoundation.common.entity.undeadMiner.RenderUndeadMiner;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.SimpleReloadableResourceManager;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
