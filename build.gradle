@@ -32,9 +32,9 @@ compileJava {
 ext.configFile = file('build.properties')
 ext.config = parseConfig(configFile)
 
-version = "${config.mc_version}-${config.version}-${config.build_number}"
+version = "${config.version}-${config.build_number}"
 group= "necro.convenientfoundation"
-archivesBaseName = "ConvenientAdditions-${config.mc_version}"
+archivesBaseName = "ConvenientFoundation-${config.mc_version}"
 
 dependencies {
     compile files(

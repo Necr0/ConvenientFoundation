@@ -2,7 +2,6 @@ package convenientfoundation.common.item;
 
 import convenientfoundation.common.item.base.CFItem;
 import convenientfoundation.common.item.base.EnumItemCategory;
-import convenientfoundation.common.item.probe.ItemBlockProbe;
 import convenientfoundation.libs.LibItems;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
