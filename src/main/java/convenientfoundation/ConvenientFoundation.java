@@ -1,7 +1,7 @@
 package convenientfoundation;
 
 import convenientfoundation.common.capabilities.entity.CapabilityEntityHandler;
-import convenientfoundation.common.energy.capability.CapabilityEnergyHandler;
+import convenientfoundation.common.capabilities.energy.CapabilityEnergyHandler;
 import convenientfoundation.common.energy.EnergyRegistry;
 import convenientfoundation.common.entity.stack.EntityTypeRegistry;
 import convenientfoundation.common.capabilities.heat.CapabilityHeatVessel;

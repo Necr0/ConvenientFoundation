@@ -5,8 +5,8 @@ import convenientfoundation.common.energy.EnergyStack;
 import convenientfoundation.client.gui.widget.IWidgetDrawable;
 import convenientfoundation.client.gui.widget.IWidgetTooltip;
 import convenientfoundation.libs.LibRegistries;
+import convenientfoundation.util.ClientHelper;
 import convenientfoundation.util.GuiHelper;
-import convenientfoundation.util.Helper;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
@@ -36,7 +36,7 @@ public class EnergyStackView implements IWidgetDrawable, IWidgetTooltip {
 
     @Override
     public List<String> getTooltip(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        return energyStack.getTooltip(Helper.getClientWorld());
+        return energyStack.getTooltip(ClientHelper.getWorld());
     }
 
     @Override

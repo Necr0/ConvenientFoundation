@@ -1,7 +1,7 @@
 package convenientfoundation.client.event.movement;
 
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.Helper;
+import convenientfoundation.util.ClientHelper;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.util.MovementInput;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,14 +12,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-@Mod.EventBusSubscriber(modid = LibMod.MODID)
+@Mod.EventBusSubscriber(value = Side.CLIENT, modid = LibMod.MODID)
 public class EventHandlerPlayerMovement {
     public static boolean wasJumping=false;
     public static boolean wasSneaking=false;
 
     @SubscribeEvent
     public static void onClientUpdate(TickEvent.ClientTickEvent event){
-        EntityPlayerSP player=Helper.getClientPlayer();
+        EntityPlayerSP player=ClientHelper.getPlayer();
         if(player==null||event.phase!=TickEvent.Phase.START) return;
 
         MovementInput input=player.movementInput;

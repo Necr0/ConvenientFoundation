@@ -1,6 +1,6 @@
 package convenientfoundation.common.network;
 
-import convenientfoundation.util.Helper;
+import convenientfoundation.util.ClientHelper;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -75,6 +75,6 @@ public class PacketParticle extends PacketBase<PacketParticle> {
 
     @SideOnly(Side.CLIENT)
     public void onClientReceive(PacketParticle message, MessageContext ctx){
-        Helper.getClientWorld().spawnParticle(message.t,message.x,message.y,message.z,message.xs,message.ys,message.zs,message.params);
+        ClientHelper.getWorld().spawnParticle(message.t,message.x,message.y,message.z,message.xs,message.ys,message.zs,message.params);
     }
 }

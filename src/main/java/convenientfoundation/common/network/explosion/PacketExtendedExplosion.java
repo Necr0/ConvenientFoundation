@@ -2,7 +2,7 @@ package convenientfoundation.common.network.explosion;
 
 import com.google.common.collect.Lists;
 import convenientfoundation.common.network.PacketBase;
-import convenientfoundation.util.Helper;
+import convenientfoundation.util.ClientHelper;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -149,8 +149,8 @@ public class PacketExtendedExplosion extends PacketBase<PacketExtendedExplosion>
 
 	@SideOnly(Side.CLIENT)
     public void onClientReceive(PacketExtendedExplosion message, MessageContext ctx){
-        ExtendedExplosion explosion = new ExtendedExplosion(Helper.getClientWorld(), null, message.posX, message.posY, message.posZ, message.strength, message.affectedBlockPositions);
+        ExtendedExplosion explosion = new ExtendedExplosion(ClientHelper.getWorld(), null, message.posX, message.posY, message.posZ, message.strength, message.affectedBlockPositions);
         explosion.doExplosionB(true);
-        Helper.getClientPlayer().addVelocity(message.getMotionX(),(double)message.getMotionY(),(double)message.getMotionZ());
+        ClientHelper.getPlayer().addVelocity(message.getMotionX(),(double)message.getMotionY(),(double)message.getMotionZ());
     }
 }

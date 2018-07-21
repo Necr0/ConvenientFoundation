@@ -1,7 +1,7 @@
 package convenientfoundation.client.gui.test;
 
 import convenientfoundation.common.entity.stack.EntityStack;
-import convenientfoundation.common.energy.capability.EnergyBattery;
+import convenientfoundation.common.capabilities.energy.EnergyBattery;
 import convenientfoundation.common.energy.EnergyStack;
 import convenientfoundation.common.energy.ModEnergy;
 import convenientfoundation.common.capabilities.heat.HeatVessel;
@@ -11,12 +11,15 @@ import convenientfoundation.client.gui.widget.HeatDisplay;
 import convenientfoundation.client.gui.widget.energy.EnergyBatteryView;
 import convenientfoundation.client.gui.widget.energy.EnergyStackView;
 import convenientfoundation.libs.LibImages;
-import convenientfoundation.util.Helper;
+import convenientfoundation.util.ClientHelper;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by Necro on 8/28/2017.
  */
+@SideOnly(Side.CLIENT)
 public class GuiEnergyViewTest extends CFGuiScreen {
     public GuiEnergyViewTest() {
         super(LibImages.DEMO_BACKGROUND);
@@ -26,7 +29,7 @@ public class GuiEnergyViewTest extends CFGuiScreen {
     public void initGui() {
         super.initGui();
         addWidget(new EnergyStackView(new EnergyStack(ModEnergy.REDSTONE,32604123),leftX+12,topY+12));
-        addWidget(new EntityStackView(new EntityStack(new EntityCreeper(Helper.getClientWorld())),leftX+12,topY+32));
+        addWidget(new EntityStackView(new EntityStack(new EntityCreeper(ClientHelper.getWorld())),leftX+12,topY+32));
         EnergyBattery battery1=new EnergyBattery(150);
         battery1.setEnergy(new EnergyStack(ModEnergy.ENDER,150));
         addWidget(new EnergyBatteryView(battery1,leftX+12+32,topY+12));

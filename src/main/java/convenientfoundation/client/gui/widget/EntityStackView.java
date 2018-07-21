@@ -3,8 +3,8 @@ package convenientfoundation.client.gui.widget;
 import convenientfoundation.common.entity.stack.EntityStack;
 import convenientfoundation.common.entity.stack.EntityTypeRegistry;
 import convenientfoundation.libs.LibRegistries;
+import convenientfoundation.util.ClientHelper;
 import convenientfoundation.util.GuiHelper;
-import convenientfoundation.util.Helper;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
@@ -34,7 +34,7 @@ public class EntityStackView implements IWidgetDrawable, IWidgetTooltip {
 
     @Override
     public List<String> getTooltip(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        return entityStack.getTooltip(Helper.getClientWorld());
+        return entityStack.getTooltip(ClientHelper.getWorld());
     }
 
     @Override

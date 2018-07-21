@@ -2,8 +2,8 @@ package convenientfoundation.client.gui.widget.itemView;
 
 import convenientfoundation.client.gui.widget.IWidgetDrawable;
 import convenientfoundation.client.gui.widget.IWidgetTooltip;
+import convenientfoundation.util.ClientHelper;
 import convenientfoundation.util.GuiHelper;
-import convenientfoundation.util.Helper;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -32,7 +32,7 @@ public class ItemView implements IWidgetDrawable, IWidgetTooltip {
 
     @Override
     public List<String> getTooltip(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        return itemStack.getTooltip(Helper.getClientPlayer(), ITooltipFlag.TooltipFlags.NORMAL);
+        return itemStack.getTooltip(ClientHelper.getPlayer(), ITooltipFlag.TooltipFlags.NORMAL);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ItemView implements IWidgetDrawable, IWidgetTooltip {
 
         RenderHelper.enableGUIStandardItemLighting();
         GlStateManager.disableDepth();
-        itemRender.renderItemAndEffectIntoGUI(Helper.getClientPlayer(), stack, posX, posY);
+        itemRender.renderItemAndEffectIntoGUI(ClientHelper.getPlayer(), stack, posX, posY);
         itemRender.renderItemOverlayIntoGUI(GuiHelper.getFontRenderer(), stack, posX, posY, null);
 
         itemRender.zLevel = 0.0F;

@@ -10,10 +10,13 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by Necro on 9/4/2017.
  */
+@SideOnly(Side.CLIENT)
 public class GuiHeatProbe extends CFGuiScreen {
     public BlockPos pos;
     public IBlockState state;

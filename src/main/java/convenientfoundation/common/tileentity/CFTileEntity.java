@@ -5,7 +5,7 @@ import com.google.common.collect.Table;
 import convenientfoundation.common.capabilities.IAutoSavable;
 import convenientfoundation.common.capabilities.entity.IEntityHandler;
 import convenientfoundation.common.capabilities.heat.IHeatVessel;
-import convenientfoundation.common.energy.capability.IEnergyHandler;
+import convenientfoundation.common.capabilities.energy.IEnergyHandler;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;

@@ -24,6 +24,7 @@ public class ModItems {
 
     public static final Item WRENCH = new ItemWrench();
     public static final Item SLIME_BUCKET = new ItemSlimeBucket();
+
     public static final Item BLOCK_PROBE = new ItemBlockProbe();
     public static final Item HEAT_PROBE = new ItemHeatProbe();
     //
@@ -74,6 +75,7 @@ public class ModItems {
     }
 
     @SubscribeEvent
+    @SideOnly(Side.CLIENT)
     public static void registerModels(ModelRegistryEvent event) {
         registerModelLocation(WRENCH);
         registerModelLocation(SLIME_BUCKET,0,SLIME_BUCKET.getRegistryName());

@@ -2,13 +2,13 @@ package convenientfoundation.client.gui.widget.energy;
 
 import convenientfoundation.common.energy.EnergyRegistry;
 import convenientfoundation.common.energy.EnergyStack;
-import convenientfoundation.common.energy.capability.IEnergyBattery;
+import convenientfoundation.common.capabilities.energy.IEnergyBattery;
 import convenientfoundation.client.gui.widget.IWidgetDrawable;
 import convenientfoundation.client.gui.widget.IWidgetTooltip;
 import convenientfoundation.libs.LibImages;
 import convenientfoundation.libs.LibRegistries;
+import convenientfoundation.util.ClientHelper;
 import convenientfoundation.util.GuiHelper;
-import convenientfoundation.util.Helper;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 
@@ -35,7 +35,7 @@ public class EnergyBatteryView implements IWidgetDrawable, IWidgetTooltip {
 
     @Override
     public List<String> getTooltip(GuiScreen guiScreen, float partialTicks, int mouseX, int mouseY) {
-        return energyBattery.getEnergy().getTooltip(Helper.getClientWorld(),energyBattery.getCapacity());
+        return energyBattery.getEnergy().getTooltip(ClientHelper.getWorld(),energyBattery.getCapacity());
     }
 
     @Override
