@@ -4,7 +4,6 @@ import convenientfoundation.ConvenientFoundation;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.libs.LibRegistries;
 import convenientfoundation.util.Helper;
-import jline.internal.Nullable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
@@ -22,6 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryBuilder;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.Optional;
 

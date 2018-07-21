@@ -1,6 +1,6 @@
 package convenientfoundation.common.event.resourceDrop;
 
-import convenientfoundation.CFConfig;
+import convenientfoundation.config.CFConfig;
 import convenientfoundation.common.item.ModItems;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.block.Block;
@@ -19,7 +19,7 @@ public class GeodeDropHandler {
     @SubscribeEvent
     public static void onBlockHarvested(BlockEvent.HarvestDropsEvent event){
         World w=event.getWorld();
-        if(w.isRemote||event.isSilkTouching()||!CFConfig.geodes)
+        if(w.isRemote||event.isSilkTouching()||!CFConfig.Geode.enabled)
             return;
 
         Block b=event.getState().getBlock();

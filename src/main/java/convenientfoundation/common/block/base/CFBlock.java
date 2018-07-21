@@ -28,7 +28,7 @@ public class CFBlock extends Block {
 
     public CFBlock(String name, Material material) {
         super(material);
-        this.setUnlocalizedName(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
+        this.setTranslationKey(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
     }
 
     @Override

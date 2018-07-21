@@ -25,7 +25,7 @@ public class CFItem extends Item {
 
     public CFItem(String name) {
         super();
-        this.setUnlocalizedName(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
+        this.setTranslationKey(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
     }
 
     @Override

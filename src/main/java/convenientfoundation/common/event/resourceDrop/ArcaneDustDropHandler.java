@@ -1,12 +1,11 @@
 package convenientfoundation.common.event.resourceDrop;
 
-import convenientfoundation.CFConfig;
+import convenientfoundation.config.CFConfig;
 import convenientfoundation.common.item.ModItems;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -22,7 +21,7 @@ public class ArcaneDustDropHandler {
     @SubscribeEvent
     public static void onBlockHarvested(BlockEvent.HarvestDropsEvent event){
         World w=event.getWorld();
-        if(w.isRemote||event.isSilkTouching()||!CFConfig.arcane_dust)
+        if(w.isRemote||event.isSilkTouching()||!CFConfig.ArcaneDust.enabled)
             return;
 
         Block b=event.getState().getBlock();

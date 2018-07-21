@@ -10,17 +10,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class StringHelper {
     @SideOnly(Side.CLIENT)
     public static String getJoke(ItemStack stack){
-        return TextFormatting.YELLOW+I18n.format("tooltip." + stack.getItem().getUnlocalizedName().split("\\.")[1]+".joke");
+        return TextFormatting.YELLOW+I18n.format("tooltip." + stack.getItem().getTranslationKey().split("\\.")[1]+".joke");
     }
 
     @SideOnly(Side.CLIENT)
     public static String getInfo(ItemStack stack){
-        return I18n.format("tooltip." + stack.getItem().getUnlocalizedName().split("\\.")[1]+".info");
+        return I18n.format("tooltip." + stack.getItem().getTranslationKey().split("\\.")[1]+".info");
     }
 
     @SideOnly(Side.CLIENT)
     public static String getAdditionalInfo(ItemStack stack){
-        return I18n.format("tooltip." + stack.getItem().getUnlocalizedName().split("\\.")[1]+".additional_info");
+        return I18n.format("tooltip." + stack.getItem().getTranslationKey().split("\\.")[1]+".additional_info");
     }
 
     @SideOnly(Side.CLIENT)

@@ -25,4 +25,4 @@ private
 eclipse
 run
 gradle_libs
-libs
+mod_libs

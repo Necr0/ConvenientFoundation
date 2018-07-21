@@ -1,17 +1,8 @@
 package convenientfoundation.common.enchantments;
 
-import convenientfoundation.CFConfig;
 import convenientfoundation.libs.LibEnchantments;
-import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.ExperienceHelper;
 import net.minecraft.enchantment.*;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.util.EnumHand;
-import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EnchantmentEverlasting extends CFEnchantment {
 

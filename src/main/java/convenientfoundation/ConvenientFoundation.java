@@ -8,6 +8,8 @@ import convenientfoundation.common.capabilities.heat.CapabilityHeatVessel;
 import convenientfoundation.common.entity.ModEntities;
 import convenientfoundation.common.item.ModItems;
 import convenientfoundation.common.loot.ModLoot;
+import convenientfoundation.config.CFConfig;
+import convenientfoundation.config.ConfigHandler;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.common.network.ModNetworking;
 import convenientfoundation.proxy.CommonProxy;
@@ -38,19 +40,26 @@ public class ConvenientFoundation {
 
     public static final CreativeTabs CREATIVETAB = new CreativeTabs(LibMod.MODID) {
         @Override
-        public ItemStack getTabIconItem() {
+        public ItemStack createIcon() {
             return new ItemStack(ModItems.SLIME_BUCKET);
         }
     };
 
     public static File configDirectory;
-    public static String configFile;
+
+    static {
+        ConfigHandler.registerClassesRecursive(CFConfig.class);
+    }
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event){
         LOG=event.getModLog();
+
         configDirectory=event.getModConfigurationDirectory();
-        configFile=event.getSuggestedConfigurationFile().getAbsolutePath();
+        ConfigHandler.config_directory=configDirectory;
+        ConfigHandler.parseConfigs();
+        ConfigHandler.loadConfigs();
+
         EnergyRegistry.init();
         EntityTypeRegistry.init();
         CapabilityEnergyHandler.register();

@@ -1,6 +1,6 @@
 package convenientfoundation.common.enchantments;
 
-import convenientfoundation.CFConfig;
+import convenientfoundation.config.CFConfig;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.event.RegistryEvent;
@@ -13,7 +13,7 @@ public class ModEnchantments {
 
     @SubscribeEvent
     public static void registerEnchantments(RegistryEvent.Register<Enchantment> evt) {
-        if(!CFConfig.enchantments)
+        if(!CFConfig.Enchantments.enabled)
             return;
 
         IForgeRegistry<Enchantment> r = evt.getRegistry();

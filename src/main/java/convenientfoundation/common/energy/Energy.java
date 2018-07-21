@@ -52,7 +52,7 @@ public class Energy extends IForgeRegistryEntry.Impl<Energy>{
 
     public Energy setUnlocalizedName(ResourceLocation rl)
     {
-        this.unlocalizedName = "energy."+rl.getResourceDomain()+":"+rl.getResourcePath()+".name";
+        this.unlocalizedName = "energy."+rl.getNamespace()+":"+rl.getPath()+".name";
         return this;
     }
 

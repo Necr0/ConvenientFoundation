@@ -95,9 +95,9 @@ public class ItemSlimeBucket extends CFItem {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         if(stack.getItemDamage()==0)
-            return super.getUnlocalizedName(stack);
+            return super.getTranslationKey(stack);
         else
             return "item." + LibMod.MODID + ":magma_cube_bucket";
     }

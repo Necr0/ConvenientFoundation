@@ -46,7 +46,7 @@ public class EntityType extends IForgeRegistryEntry.Impl<EntityType>{
 
     public EntityType setUnlocalizedName(ResourceLocation rl)
     {
-        this.unlocalizedName = "entity."+rl.getResourceDomain()+":"+rl.getResourcePath()+".name";
+        this.unlocalizedName = "entity."+rl.getNamespace()+":"+rl.getPath()+".name";
         return this;
     }
 
