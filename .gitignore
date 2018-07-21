@@ -26,3 +26,4 @@ eclipse
 run
 gradle_libs
 mod_libs
+credentials.properties

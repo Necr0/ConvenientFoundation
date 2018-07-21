@@ -5,6 +5,7 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.1"
     }
 }
 
@@ -22,6 +23,7 @@ repositories {
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
@@ -29,32 +31,29 @@ compileJava {
     sourceCompatibility = targetCompatibility = "1.8"
 }
 
-ext.configFile = file('build.properties')
-ext.config = parseConfig(configFile)
-
-version = "${config.version}-${config.build_number}"
+version = "${project.version}-${project.build_number}"
 group= "necro.convenientfoundation"
-archivesBaseName = "ConvenientFoundation-${config.mc_version}"
+archivesBaseName = "ConvenientFoundation-${project.mc_version}"
 
 dependencies {
     compile files(
-            "mod_libs/Baubles-${config.baubles_version}-api.jar"
+            "mod_libs/Baubles-${project.baubles_version}-api.jar"
     )
-    compile "mezz.jei:jei_${config.jei_version}:api"
-    runtime "mezz.jei:jei_${config.jei_version}"
-    /*compile "mcjty.theoneprobe:TheOneProbe-1.12:${config.oneprobe_version}:api"
-    runtime "mcjty.theoneprobe:TheOneProbe-1.12:${config.oneprobe_version}"
-    deobfCompile "gigaherz.guidebook:Guidebook-${config.guidebook_version}"*/
+    compile "mezz.jei:jei_${project.jei_version}:api"
+    runtime "mezz.jei:jei_${project.jei_version}"
+    /*compile "mcjty.theoneprobe:TheOneProbe-1.12:${project.oneprobe_version}:api"
+    runtime "mcjty.theoneprobe:TheOneProbe-1.12:${project.oneprobe_version}"
+    deobfCompile "gigaherz.guidebook:Guidebook-${project.guidebook_version}"*/
 }
 
 minecraft {
-    version = "${config.mc_version}-${config.forge_version}"
+    version = "${project.mc_version}-${project.forge_version}"
     runDir = "run"
 
-    mappings = config.mc_mappings
+    mappings = project.mc_mappings
 
-    replace 'GRADLE:BUILD', config.build_number
-    replace 'GRADLE:VERSION', config.version
+    replace 'GRADLE:BUILD', project.build_number
+    replace 'GRADLE:VERSION', project.version
     replaceIn 'LibMod.java'
 }
 
@@ -64,7 +63,7 @@ processResources {
         include 'mcmod.info'
 
         // replace version and mcversion
-        expand 'version': project.version, 'mcversion': config.mc_version
+        expand 'version': project.version, 'mcversion': project.mc_version
     }
 
     // copy everything else, thats not the mcmod.info
@@ -73,60 +72,39 @@ processResources {
     }
 }
 
-def parseConfig(File cfg) {
-    cfg.withReader {
-        def prop = new Properties()
-        prop.load(it)
-        return (new ConfigSlurper().parse(prop))
-    }
-}
-
-jar {
-    classifier = ''
-}
-
-/*
-Keep this in mind for potential CA2 + CF jar
-
-
-plugins {
-    id 'com.github.johnrengelman.shadow' version '1.2.3'
-}
-
-reobf {
-    shadowJar { mappingType = 'SEARGE' }
-}
-
-shadowJar {
-    classifier = ''
-    dependencies {
-        include(dependency(':Commons-1.12.0:'))
-    }
-    relocate 'gigaherz.common', "${group}.shadow.common"
-}
-*/
-
 artifacts {
-    archives jar
     archives sourceJar
 }
 
-//idea { module { inheritOutputDirs = true } }
-tasks.publish.dependsOn build
 publishing {
+    tasks.publish.dependsOn 'build'
     publications {
         mavenJava(MavenPublication) {
-            artifactId project.archivesBaseName
             from components.java
-
-            artifact jar
             artifact sourceJar
         }
     }
+}
 
-    repositories {
-        maven {
-            url "$projectDir/build/libs/maven"
+Properties credentials = new Properties()
+InputStream stream = new FileInputStream("$project.rootDir/credentials.properties")
+credentials.load(stream)
+stream.close()
+
+artifactory {
+    contextUrl = 'http://h2743441.stratoserver.net:8081/artifactory'
+    publish {
+        repository {
+            repoKey = 'maven'
+
+            username = credentials.getProperty("username")
+            password = credentials.getProperty("password")
+        }
+        defaults {
+            publications('mavenJava')
+            publishArtifacts = true
+
+            publishPom = true
         }
     }
 }
