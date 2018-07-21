@@ -2,7 +2,9 @@ package convenientfoundation.common.event.resourceDrop;
 
 import convenientfoundation.common.loot.ModLoot;
 import convenientfoundation.libs.LibMod;
+import convenientfoundation.util.EntityHelper;
 import convenientfoundation.util.Helper;
+import convenientfoundation.util.ItemHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.item.ItemStack;
@@ -35,7 +37,7 @@ public class DragonDropHandler {
             for(int i=0;i<itemstack.getCount();i++){
                 ItemStack drop_stack=itemstack.copy();
                 drop_stack.setCount(1);
-                Helper.spawnItem(w,e.posX-1.5d+(w.rand.nextDouble()*3),e.posY-1.5d+(w.rand.nextDouble()*3),e.posZ-1.5d+(w.rand.nextDouble()*3),drop_stack);
+                ItemHelper.spawnItem(w,e.posX-1.5d+(w.rand.nextDouble()*3),e.posY-1.5d+(w.rand.nextDouble()*3),e.posZ-1.5d+(w.rand.nextDouble()*3),drop_stack);
             }
         }
     }

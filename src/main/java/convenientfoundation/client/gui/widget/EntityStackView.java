@@ -51,13 +51,15 @@ public class EntityStackView implements IWidgetDrawable, IWidgetTooltip {
         if (stack == null) {
             return;
         }
+        GlStateManager.pushAttrib();
+        GlStateManager.disableLighting();
+        GlStateManager.disableDepth();
+        GlStateManager.disableBlend();
+
         TextureAtlasSprite entitySprite = EntityTypeRegistry.getEntitySprite(stack.getType());
         guiScreen.mc.renderEngine.bindTexture(LibRegistries.ENTITY_TEXTURE_LOCATION);
         GuiHelper.renderTAS(entitySprite,x,y,300);
 
-        GlStateManager.disableLighting();
-        GlStateManager.disableDepth();
-        GlStateManager.disableBlend();
         FontRenderer fr=GuiHelper.getFontRenderer();
         int amount=stack.getAmount();
         String s;
@@ -68,9 +70,11 @@ public class EntityStackView implements IWidgetDrawable, IWidgetTooltip {
         else
             s=(stack.isEmpty()?TextFormatting.YELLOW:"")+Integer.toString(amount);
         fr.drawStringWithShadow(s, (float)(x + 19 - 2 - fr.getStringWidth(s)), (float)(y + 6 + 3), 16777215);
+
         GlStateManager.enableLighting();
         GlStateManager.enableDepth();
         GlStateManager.enableBlend();
+        GlStateManager.popAttrib();
     }
 
     @Override

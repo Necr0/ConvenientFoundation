@@ -5,6 +5,7 @@ import convenientfoundation.common.item.base.EnumItemCategory;
 import convenientfoundation.libs.LibItems;
 import convenientfoundation.common.loot.ModLoot;
 import convenientfoundation.util.Helper;
+import convenientfoundation.util.ItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -32,7 +33,7 @@ public class ItemGeode extends CFItem {
 
         for (ItemStack itemstack : loottable.generateLootForPools(world.rand, builder.build()))
         {
-            Helper.insertOrDrop(playerIn,itemstack);
+            ItemHelper.insertOrDrop(playerIn,itemstack);
         }
         return new ActionResult<>(EnumActionResult.SUCCESS,new ItemStack(this,stack.getCount()-1));
     }

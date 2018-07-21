@@ -5,6 +5,7 @@ import convenientfoundation.libs.LibItems;
 import convenientfoundation.common.item.base.CFItem;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.util.Helper;
+import convenientfoundation.util.ItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.player.EntityPlayer;
@@ -67,7 +68,7 @@ public class ItemSlimeBucket extends CFItem {
                 player.setHeldItem(event.getHand(), new_stack);
             }
             else
-                Helper.insertOrDrop(player, new_stack);
+                ItemHelper.insertOrDrop(player, new_stack);
 
             event.setCanceled(true);
         }
@@ -79,9 +80,9 @@ public class ItemSlimeBucket extends CFItem {
             return new ActionResult<>(EnumActionResult.SUCCESS,new ItemStack(Items.BUCKET));
         ItemStack stack=playerIn.getHeldItem(handIn);
         if(stack.getItemDamage()==0)
-            Helper.insertOrDrop(playerIn,new ItemStack(Items.SLIME_BALL,1+worldIn.rand.nextInt(2)));
+            ItemHelper.insertOrDrop(playerIn,new ItemStack(Items.SLIME_BALL,1+worldIn.rand.nextInt(2)));
         else
-            Helper.insertOrDrop(playerIn,new ItemStack(Items.MAGMA_CREAM,1+worldIn.rand.nextInt(2)));
+            ItemHelper.insertOrDrop(playerIn,new ItemStack(Items.MAGMA_CREAM,1+worldIn.rand.nextInt(2)));
         return new ActionResult<>(EnumActionResult.SUCCESS,new ItemStack(Items.BUCKET));
     }
 

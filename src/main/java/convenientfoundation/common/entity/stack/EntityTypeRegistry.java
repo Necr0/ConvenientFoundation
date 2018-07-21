@@ -1,21 +1,17 @@
 package convenientfoundation.common.entity.stack;
 
 import convenientfoundation.ConvenientFoundation;
+import convenientfoundation.client.FixedTextureMap;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.libs.LibRegistries;
-import convenientfoundation.util.Helper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -48,7 +44,7 @@ public class EntityTypeRegistry {
 
     @SideOnly(Side.CLIENT)
     public static void initTextureMap(){
-        TEXTURE_MAP_ENTITY = new TextureMap("textures/entity-type", textureMap -> {
+        TEXTURE_MAP_ENTITY = new FixedTextureMap("textures/entity-type", textureMap -> {
             for(Map.Entry<ResourceLocation, EntityType> entry : EntityTypeRegistry.ENTITY_REGISTRY.getEntries()){
                 ConvenientFoundation.LOG.info("Loading Entity Texture {} for {}",entry.getValue().getTexture(),entry.getKey());
                 textureMap.registerSprite(entry.getValue().getTexture());

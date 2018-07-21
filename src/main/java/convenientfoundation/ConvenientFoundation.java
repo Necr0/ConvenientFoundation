@@ -77,6 +77,6 @@ public class ConvenientFoundation {
 
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-        //PROXY.registerReloadableResources();
+        PROXY.registerReloadableResources();
     }
 }

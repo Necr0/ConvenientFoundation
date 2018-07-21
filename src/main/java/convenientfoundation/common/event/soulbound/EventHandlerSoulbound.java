@@ -34,7 +34,7 @@ public class EventHandlerSoulbound {
     		ItemStack stack=ent.getItem();
     		if(EnchantmentHelper.getEnchantmentLevel(EnchantmentEverlasting.INSTANCE,stack)>0 ||
 					stack.getItem() instanceof ISoulbound && ((ISoulbound)stack.getItem()).isSoulbound(stack, player)){
-    			Helper.insertOrDrop(player,stack);
+				ItemHelper.insertOrDrop(player,stack);
 				i.remove();
     		}
     	}
@@ -52,7 +52,7 @@ public class EventHandlerSoulbound {
 			ItemStack stack=h.getStackInSlot(slot);
     		if(EnchantmentHelper.getEnchantmentLevel(EnchantmentEverlasting.INSTANCE,stack)>0 ||
 					stack.getItem() instanceof ISoulbound&&((ISoulbound)stack.getItem()).isSoulbound(stack, original)){
-				Helper.insertOrDrop(clone,stack);
+				ItemHelper.insertOrDrop(clone,stack);
 				h.extractItem(slot,64,false);
     		}
 		}

@@ -4,6 +4,7 @@ import convenientfoundation.client.gui.CFGuiScreen;
 import convenientfoundation.client.gui.widget.label.Label;
 import convenientfoundation.libs.LibImages;
 import convenientfoundation.libs.LibMod;
+import convenientfoundation.util.BlockHelper;
 import convenientfoundation.util.Helper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -32,7 +33,7 @@ public class GuiBlockProbe extends CFGuiScreen {
         addWidget(new Label(leftX+5,topY+5, I18n.format("gui."+LibMod.MODID+":blockprobe.pos", pos.getX(), pos.getY(), pos.getZ())));
         addWidget(new Label(leftX+5,topY+15, I18n.format("gui."+LibMod.MODID+":blockprobe.tile.state", state.toString())));
         addWidget(new Label(leftX+5,topY+25, I18n.format("gui."+LibMod.MODID+":blockprobe.tile.class", state.getBlock().getClass().getCanonicalName())));
-        String oredict=String.join(", ",Helper.getBlockOreDict(state));
+        String oredict=String.join(", ",BlockHelper.getBlockOreDict(state));
         addWidget(new Label(leftX+5,topY+35, I18n.format("gui."+LibMod.MODID+":blockprobe.oredict", oredict.equals("")?"-":oredict)));
         addWidget(new Label(leftX+5,topY+45, I18n.format("gui."+LibMod.MODID+":blockprobe.tileentity.name", te==null?"null":TileEntity.getKey(te.getClass()))));
         addWidget(new Label(leftX+5,topY+55, I18n.format("gui."+LibMod.MODID+":blockprobe.tileentity.class", te==null?"null":te.getClass().getCanonicalName())));

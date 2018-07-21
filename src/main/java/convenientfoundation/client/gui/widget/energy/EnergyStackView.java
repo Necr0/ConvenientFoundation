@@ -50,16 +50,15 @@ public class EnergyStackView implements IWidgetDrawable, IWidgetTooltip {
     }
 
     public void drawEnergy(GuiScreen guiScreen, int x, int y, EnergyStack stack){
-        if (stack == null) {
-            return;
-        }
+        GlStateManager.pushAttrib();
+        GlStateManager.disableLighting();
+        GlStateManager.disableDepth();
+        GlStateManager.disableBlend();
+
         TextureAtlasSprite energySprite = EnergyRegistry.getEnergySprite(stack.getType());
         guiScreen.mc.renderEngine.bindTexture(LibRegistries.ENERGY_TEXTURE_LOCATION);
         GuiHelper.renderTAS(energySprite,x,y,300);
 
-        GlStateManager.disableLighting();
-        GlStateManager.disableDepth();
-        GlStateManager.disableBlend();
         FontRenderer fr=GuiHelper.getFontRenderer();
         int amount=stack.getAmount();
         String s;
@@ -70,9 +69,11 @@ public class EnergyStackView implements IWidgetDrawable, IWidgetTooltip {
         else
             s=(stack.isEmpty()?TextFormatting.YELLOW:"")+Integer.toString(amount);
         fr.drawStringWithShadow(s, (float)(x + 19 - 2 - fr.getStringWidth(s)), (float)(y + 6 + 3), 16777215);
+
         GlStateManager.enableLighting();
         GlStateManager.enableDepth();
         GlStateManager.enableBlend();
+        GlStateManager.popAttrib();
     }
 
     @Override

@@ -2,6 +2,7 @@ package convenientfoundation.common.potion;
 
 import convenientfoundation.libs.LibPotions;
 import convenientfoundation.libs.LibImages;
+import convenientfoundation.util.BlockHelper;
 import convenientfoundation.util.Helper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
@@ -24,7 +25,7 @@ public class PotionLumbering extends CFPotion {
     public void onBreakSpeed(PlayerEvent.BreakSpeed event) {
         EntityPlayer player = event.getEntityPlayer();
         PotionEffect active=player.getActivePotionEffect(PotionLumbering.INSTANCE);
-        if(active!=null&&Helper.doesOreDictMatch(event.getState(),"logWood",false)){
+        if(active!=null&&BlockHelper.doesOreDictMatch(event.getState(),"logWood",false)){
             event.setNewSpeed(event.getNewSpeed()*(1<<(active.getAmplifier()+1)));
         }
     }

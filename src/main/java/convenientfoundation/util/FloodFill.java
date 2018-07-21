@@ -90,7 +90,7 @@ public class FloodFill {
         public boolean matches(IBlockState state){
             switch (mode){
                 case 0:
-                    return Helper.doesOreDictMatch(state,ore,false);
+                    return BlockHelper.doesOreDictMatch(state,ore,false);
                 case 1:
                     return state.getBlock()==block;
                 case 2:

@@ -1,5 +1,6 @@
 package convenientfoundation.common.entity.specialitem.behaviours;
 
+import convenientfoundation.util.EntityHelper;
 import convenientfoundation.util.Helper;
 import convenientfoundation.common.entity.specialitem.IEntitySpecialItemBehaviour;
 import net.minecraft.entity.item.EntityItem;
@@ -25,7 +26,7 @@ public class BehaviourSensitivitySunlight implements IEntitySpecialItemBehaviour
         if(w.isRemote)
             return;
 
-        if (w.isDaytime() && !w.isRaining() && Helper.canEntitySeeSky(item) && new Random().nextInt(15) == 0)
+        if (w.isDaytime() && !w.isRaining() && EntityHelper.canEntitySeeSky(item) && new Random().nextInt(15) == 0)
             item.setFire(5);
     }
 

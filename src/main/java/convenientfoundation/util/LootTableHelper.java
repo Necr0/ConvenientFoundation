@@ -15,11 +15,6 @@ public class LootTableHelper {
     public static final Field POOLS_FIELD = ReflectionHelper.findField(LootTable.class, LibMappings.Fields.LootTable_pools);
     public static final Field ENTRIES_FIELD = ReflectionHelper.findField(LootPool.class, LibMappings.Fields.LootPool_lootEntries);
     public static final Field ENTRYNAME_FIELD = ReflectionHelper.findField(LootEntry.class, LibMappings.Fields.LootEntry_entryName);
-    {
-        POOLS_FIELD.setAccessible(true);
-        ENTRIES_FIELD.setAccessible(true);
-        ENTRYNAME_FIELD.setAccessible(true);
-    }
 
     public static LootTable mergeIntoTable(LootTable source, LootTable target){
         return mergeIntoTable(source,target,EnumDuplicateMode.REPLACE);
