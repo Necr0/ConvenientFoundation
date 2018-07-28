@@ -5,7 +5,6 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.0.1"
     }
 }
 
@@ -23,7 +22,6 @@ repositories {
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
@@ -31,9 +29,9 @@ compileJava {
     sourceCompatibility = targetCompatibility = "1.8"
 }
 
-version = "${project.version}-${project.build_number}"
-group= "necro.convenientfoundation"
-archivesBaseName = "ConvenientFoundation-${project.mc_version}"
+project.version = "$project.mc_version-$project.version"
+project.group= project.mod_group
+project.archivesBaseName = project.mod_name
 
 dependencies {
     compile files(
@@ -72,39 +70,40 @@ processResources {
     }
 }
 
-artifacts {
-    archives sourceJar
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+    from sourceSets.api.allJava
+}
+
+Properties authCredentials = new Properties()
+if(file("$project.rootDir/$project.credentialsPath").exists() ){
+    InputStream stream = new FileInputStream("$project.rootDir/$project.credentialsPath")
+    authCredentials.load(stream)
+    stream.close()
 }
 
 publishing {
     tasks.publish.dependsOn 'build'
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact sourceJar
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url = "https://nexus.necro-development.net/repository/maven-releases/"
+            credentials {
+                username authCredentials.username
+                password authCredentials.password
+            }
         }
     }
-}
 
-Properties credentials = new Properties()
-InputStream stream = new FileInputStream("$project.rootDir/credentials.properties")
-credentials.load(stream)
-stream.close()
+    publications {
+        maven(MavenPublication) {
+            groupId = project.mod_group
+            artifactId = project.mod_artifactId
+            version = version
 
-artifactory {
-    contextUrl = 'http://h2743441.stratoserver.net:8081/artifactory'
-    publish {
-        repository {
-            repoKey = 'maven'
-
-            username = credentials.getProperty("username")
-            password = credentials.getProperty("password")
-        }
-        defaults {
-            publications('mavenJava')
-            publishArtifacts = true
-
-            publishPom = true
+            from components.java
+            artifact sourcesJar
         }
     }
 }

@@ -4,8 +4,6 @@ import convenientfoundation.common.energy.EnergyRegistry;
 import convenientfoundation.common.entity.stack.EntityTypeRegistry;
 import convenientfoundation.common.entity.undeadMiner.EntityUndeadMiner;
 import convenientfoundation.common.entity.undeadMiner.RenderUndeadMiner;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.SimpleReloadableResourceManager;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;

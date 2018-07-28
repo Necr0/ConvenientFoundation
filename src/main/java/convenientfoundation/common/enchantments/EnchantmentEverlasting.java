@@ -1,7 +1,9 @@
 package convenientfoundation.common.enchantments;
 
 import convenientfoundation.libs.LibEnchantments;
-import net.minecraft.enchantment.*;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentVanishingCurse;
+import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentEverlasting extends CFEnchantment {

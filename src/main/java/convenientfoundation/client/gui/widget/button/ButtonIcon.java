@@ -1,9 +1,9 @@
 package convenientfoundation.client.gui.widget.button;
 
-import convenientfoundation.libs.LibMod;
 import convenientfoundation.client.gui.ImageResourceLocation;
 import convenientfoundation.client.gui.widget.IWidget;
 import convenientfoundation.client.gui.widget.IWidgetTooltip;
+import convenientfoundation.libs.LibMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;

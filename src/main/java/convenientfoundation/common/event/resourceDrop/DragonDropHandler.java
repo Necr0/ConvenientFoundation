@@ -2,8 +2,6 @@ package convenientfoundation.common.event.resourceDrop;
 
 import convenientfoundation.common.loot.ModLoot;
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.EntityHelper;
-import convenientfoundation.util.Helper;
 import convenientfoundation.util.ItemHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;

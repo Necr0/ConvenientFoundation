@@ -2,7 +2,6 @@ package convenientfoundation.common.event.soulbound;
 
 import convenientfoundation.common.enchantments.EnchantmentEverlasting;
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.Helper;
 import convenientfoundation.util.ItemHelper;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
@@ -11,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.event.entity.player.PlayerDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.fml.common.EnhancedRuntimeException;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.items.CapabilityItemHandler;

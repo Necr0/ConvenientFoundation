@@ -1,8 +1,7 @@
 package convenientfoundation.common.entity.specialitem.behaviours;
 
-import convenientfoundation.util.EntityHelper;
-import convenientfoundation.util.Helper;
 import convenientfoundation.common.entity.specialitem.IEntitySpecialItemBehaviour;
+import convenientfoundation.util.EntityHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;

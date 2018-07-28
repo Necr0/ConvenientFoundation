@@ -1,15 +1,15 @@
 package convenientfoundation.client.gui.test;
 
-import convenientfoundation.common.entity.stack.EntityStack;
-import convenientfoundation.common.capabilities.energy.EnergyBattery;
-import convenientfoundation.common.energy.EnergyStack;
-import convenientfoundation.common.energy.ModEnergy;
-import convenientfoundation.common.capabilities.heat.HeatVessel;
 import convenientfoundation.client.gui.CFGuiScreen;
 import convenientfoundation.client.gui.widget.EntityStackView;
 import convenientfoundation.client.gui.widget.HeatDisplay;
 import convenientfoundation.client.gui.widget.energy.EnergyBatteryView;
 import convenientfoundation.client.gui.widget.energy.EnergyStackView;
+import convenientfoundation.common.capabilities.energy.EnergyBattery;
+import convenientfoundation.common.capabilities.heat.HeatVessel;
+import convenientfoundation.common.energy.EnergyStack;
+import convenientfoundation.common.energy.ModEnergy;
+import convenientfoundation.common.entity.stack.EntityStack;
 import convenientfoundation.libs.LibImages;
 import convenientfoundation.util.ClientHelper;
 import net.minecraft.entity.monster.EntityCreeper;

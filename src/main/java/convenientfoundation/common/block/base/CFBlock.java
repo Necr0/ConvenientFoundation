@@ -5,6 +5,7 @@ import convenientfoundation.common.item.base.EnumItemCategory;
 import convenientfoundation.common.item.base.StringHelper;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -25,6 +26,10 @@ public class CFBlock extends Block {
     protected boolean defaultJoke=false;
     protected boolean baublesRequiredInfo=false;
     protected EnumItemCategory category=null;
+
+    public CFBlock(Material material) {
+        super(material);
+    }
 
     public CFBlock(String name, Material material) {
         super(material);
@@ -69,6 +74,11 @@ public class CFBlock extends Block {
 
     public CFBlock setBaublesRequiredInfo(boolean baublesRequiredInfo) {
         this.baublesRequiredInfo = baublesRequiredInfo;
+        return this;
+    }
+
+    public CFBlock setSoundType(SoundType soundType){
+        super.setSoundType(soundType);
         return this;
     }
 }

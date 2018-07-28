@@ -1,6 +1,5 @@
 package convenientfoundation.config;
 
-import convenientfoundation.ConvenientFoundation;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;

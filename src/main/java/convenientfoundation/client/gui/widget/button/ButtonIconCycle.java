@@ -1,10 +1,9 @@
 package convenientfoundation.client.gui.widget.button;
 
 import convenientfoundation.client.gui.ImageResourceLocation;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import org.lwjgl.util.Rectangle;
-
-import net.minecraft.client.Minecraft;
 
 import java.util.Collections;
 import java.util.List;

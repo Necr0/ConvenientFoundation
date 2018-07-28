@@ -2,9 +2,8 @@ package convenientfoundation.common.item;
 
 import convenientfoundation.common.item.base.CFItem;
 import convenientfoundation.common.item.base.EnumItemCategory;
-import convenientfoundation.libs.LibItems;
 import convenientfoundation.common.loot.ModLoot;
-import convenientfoundation.util.Helper;
+import convenientfoundation.libs.LibItems;
 import convenientfoundation.util.ItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,7 +14,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
-import net.minecraft.world.storage.loot.conditions.LootCondition;
 
 public class ItemGeode extends CFItem {
     public ItemGeode() {

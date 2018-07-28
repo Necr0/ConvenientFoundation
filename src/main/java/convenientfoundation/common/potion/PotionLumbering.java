@@ -1,9 +1,8 @@
 package convenientfoundation.common.potion;
 
-import convenientfoundation.libs.LibPotions;
 import convenientfoundation.libs.LibImages;
+import convenientfoundation.libs.LibPotions;
 import convenientfoundation.util.BlockHelper;
-import convenientfoundation.util.Helper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.MinecraftForge;

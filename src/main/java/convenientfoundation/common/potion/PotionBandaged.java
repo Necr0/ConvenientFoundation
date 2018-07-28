@@ -1,7 +1,7 @@
 package convenientfoundation.common.potion;
 
-import convenientfoundation.libs.LibPotions;
 import convenientfoundation.libs.LibImages;
+import convenientfoundation.libs.LibPotions;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.MinecraftForge;

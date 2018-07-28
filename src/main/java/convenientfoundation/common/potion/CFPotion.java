@@ -1,7 +1,7 @@
 package convenientfoundation.common.potion;
 
-import convenientfoundation.libs.LibMod;
 import convenientfoundation.client.gui.ImageResourceLocation;
+import convenientfoundation.libs.LibMod;
 import convenientfoundation.util.GuiHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.potion.Potion;

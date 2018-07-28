@@ -1,17 +1,17 @@
 package convenientfoundation;
 
-import convenientfoundation.common.capabilities.entity.CapabilityEntityHandler;
 import convenientfoundation.common.capabilities.energy.CapabilityEnergyHandler;
-import convenientfoundation.common.energy.EnergyRegistry;
-import convenientfoundation.common.entity.stack.EntityTypeRegistry;
+import convenientfoundation.common.capabilities.entity.CapabilityEntityHandler;
 import convenientfoundation.common.capabilities.heat.CapabilityHeatVessel;
+import convenientfoundation.common.energy.EnergyRegistry;
 import convenientfoundation.common.entity.ModEntities;
+import convenientfoundation.common.entity.stack.EntityTypeRegistry;
 import convenientfoundation.common.item.ModItems;
 import convenientfoundation.common.loot.ModLoot;
+import convenientfoundation.common.network.ModNetworking;
 import convenientfoundation.config.CFConfig;
 import convenientfoundation.config.ConfigHandler;
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.common.network.ModNetworking;
 import convenientfoundation.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;

@@ -1,9 +1,14 @@
-package convenientfoundation.common.item.base;
+package convenientfoundation.common.block.base;
 
 import convenientfoundation.ConvenientFoundation;
+import convenientfoundation.common.item.base.EnumItemCategory;
+import convenientfoundation.common.item.base.StringHelper;
 import convenientfoundation.libs.LibMod;
+import ctg.BlockCTGTransparentA;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Loader;
@@ -15,7 +20,7 @@ import java.util.List;
 /**
  * Created by Necro on 7/22/2017.
  */
-public class CFItem extends Item {
+public class CFBlockCTGTransparentA extends BlockCTGTransparentA {
 
     protected boolean defaultInfo=true;
     protected boolean defaultAdditionalInfo=false;
@@ -23,12 +28,12 @@ public class CFItem extends Item {
     protected boolean baublesRequiredInfo=false;
     protected EnumItemCategory category=null;
 
-    public CFItem() {
-        super();
+    public CFBlockCTGTransparentA(Material material) {
+        super(material);
     }
 
-    public CFItem(String name) {
-        super();
+    public CFBlockCTGTransparentA(String name, Material material) {
+        super(material);
         this.setTranslationKey(LibMod.MODID + ":" + name).setCreativeTab(ConvenientFoundation.CREATIVETAB).setRegistryName(name);
     }
 
@@ -48,28 +53,33 @@ public class CFItem extends Item {
         super.addInformation(stack,player,tooltip,advanced);
     }
 
-    public CFItem setDefaultInfo(boolean defaultInfo) {
+    public CFBlockCTGTransparentA setDefaultInfo(boolean defaultInfo) {
         this.defaultInfo = defaultInfo;
         return this;
     }
 
-    public CFItem setDefaultAdditionalInfo(boolean defaultAdditionalInfo) {
+    public CFBlockCTGTransparentA setDefaultAdditionalInfo(boolean defaultAdditionalInfo) {
         this.defaultAdditionalInfo = defaultAdditionalInfo;
         return this;
     }
 
-    public CFItem setDefaultJoke(boolean defaultJoke) {
+    public CFBlockCTGTransparentA setDefaultJoke(boolean defaultJoke) {
         this.defaultJoke = defaultJoke;
         return this;
     }
 
-    public CFItem setCategory(EnumItemCategory category) {
+    public CFBlockCTGTransparentA setCategory(EnumItemCategory category) {
         this.category=category;
         return this;
     }
 
-    public CFItem setBaublesRequiredInfo(boolean baublesRequiredInfo) {
+    public CFBlockCTGTransparentA setBaublesRequiredInfo(boolean baublesRequiredInfo) {
         this.baublesRequiredInfo = baublesRequiredInfo;
+        return this;
+    }
+
+    public CFBlockCTGTransparentA setSoundType(SoundType soundType){
+        super.setSoundType(soundType);
         return this;
     }
 }

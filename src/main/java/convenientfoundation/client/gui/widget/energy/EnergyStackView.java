@@ -1,9 +1,9 @@
 package convenientfoundation.client.gui.widget.energy;
 
-import convenientfoundation.common.energy.EnergyRegistry;
-import convenientfoundation.common.energy.EnergyStack;
 import convenientfoundation.client.gui.widget.IWidgetDrawable;
 import convenientfoundation.client.gui.widget.IWidgetTooltip;
+import convenientfoundation.common.energy.EnergyRegistry;
+import convenientfoundation.common.energy.EnergyStack;
 import convenientfoundation.libs.LibRegistries;
 import convenientfoundation.util.ClientHelper;
 import convenientfoundation.util.GuiHelper;

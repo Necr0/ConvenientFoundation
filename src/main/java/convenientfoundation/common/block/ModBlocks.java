@@ -13,10 +13,12 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(modid = LibMod.MODID)
+@GameRegistry.ObjectHolder(LibMod.MODID)
 public class ModBlocks {
     public static final Block ARCANE_BLOCK = new CFBlock(LibBlocks.arcane_block, Material.ROCK).setCategory(EnumItemCategory.RESOURCE).setDefaultInfo(false).setHardness(5.0F).setResistance(10.0F);
 

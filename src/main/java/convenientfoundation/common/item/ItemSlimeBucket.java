@@ -1,10 +1,9 @@
 package convenientfoundation.common.item;
 
+import convenientfoundation.common.item.base.CFItem;
 import convenientfoundation.common.item.base.EnumItemCategory;
 import convenientfoundation.libs.LibItems;
-import convenientfoundation.common.item.base.CFItem;
 import convenientfoundation.libs.LibMod;
-import convenientfoundation.util.Helper;
 import convenientfoundation.util.ItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.monster.EntitySlime;

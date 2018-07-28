@@ -1,7 +1,7 @@
 package convenientfoundation.common.event.resourceDrop;
 
-import convenientfoundation.config.CFConfig;
 import convenientfoundation.common.item.ModItems;
+import convenientfoundation.config.CFConfig;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

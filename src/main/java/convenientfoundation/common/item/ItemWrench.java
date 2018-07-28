@@ -30,38 +30,36 @@ public class ItemWrench extends CFItem {
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         IBlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
-        if (block != null) {
-            if (!player.isSneaking()) {
-                if (!world.isRemote) {
-                    if(block instanceof IConfigurable){
-                        if(((IConfigurable) block).canConfigure(player,world,pos,side)){
-                            ((IConfigurable) block).configure(player,world,pos,side);
+        if (!player.isSneaking()) {
+            if (!world.isRemote) {
+                if(block instanceof IConfigurable){
+                    if(((IConfigurable) block).canConfigure(player,world,pos,side)){
+                        ((IConfigurable) block).configure(player,world,pos,side);
+                        return EnumActionResult.SUCCESS;
+                    }
+                }else if(block.hasTileEntity(state)){
+                    TileEntity te=world.getTileEntity(pos);
+                    if(te instanceof IConfigurable){
+                        if(((IConfigurable) te).canConfigure(player,world,pos,side)){
+                            ((IConfigurable) te).configure(player,world,pos,side);
                             return EnumActionResult.SUCCESS;
                         }
-                    }else if(block.hasTileEntity(state)){
-                        TileEntity te=world.getTileEntity(pos);
-                        if(te instanceof IConfigurable){
-                            if(((IConfigurable) te).canConfigure(player,world,pos,side)){
-                                ((IConfigurable) te).configure(player,world,pos,side);
-                                return EnumActionResult.SUCCESS;
-                            }
-                        }
                     }
-                    block.rotateBlock(world, pos, side);
+                }
+                block.rotateBlock(world, pos, side);
+                return EnumActionResult.SUCCESS;
+            }
+            player.swingArm(hand);
+            return EnumActionResult.PASS;
+        } else {
+            if (block instanceof IDismantleable) {
+                IDismantleable d = (IDismantleable) block;
+                if (!world.isRemote && d.canDismantle(player, world, pos)) {
+                    d.dismantleBlock(player, world, pos, false);
                     return EnumActionResult.SUCCESS;
                 }
                 player.swingArm(hand);
                 return EnumActionResult.PASS;
-            } else {
-                if (block instanceof IDismantleable) {
-                    IDismantleable d = (IDismantleable) block;
-                    if (!world.isRemote && d.canDismantle(player, world, pos)) {
-                        d.dismantleBlock(player, world, pos, false);
-                        return EnumActionResult.SUCCESS;
-                    }
-                    player.swingArm(hand);
-                    return EnumActionResult.PASS;
-                }
             }
         }
         return EnumActionResult.FAIL;

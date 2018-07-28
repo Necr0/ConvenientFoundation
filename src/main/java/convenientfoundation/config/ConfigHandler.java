@@ -1,11 +1,9 @@
 package convenientfoundation.config;
 
-import com.google.common.reflect.Reflection;
 import convenientfoundation.ConvenientFoundation;
 
 import javax.annotation.Nullable;
 import java.io.File;
-import java.net.URL;
 import java.util.*;
 
 public class ConfigHandler {

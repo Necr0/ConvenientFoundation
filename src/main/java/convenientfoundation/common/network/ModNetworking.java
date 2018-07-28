@@ -1,7 +1,7 @@
 package convenientfoundation.common.network;
 
-import convenientfoundation.libs.LibMod;
 import convenientfoundation.common.network.explosion.PacketExtendedExplosion;
+import convenientfoundation.libs.LibMod;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.NetworkRegistry;

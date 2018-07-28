@@ -1,7 +1,7 @@
 package convenientfoundation.common.event.resourceDrop;
 
-import convenientfoundation.config.CFConfig;
 import convenientfoundation.common.item.ModItems;
+import convenientfoundation.config.CFConfig;
 import convenientfoundation.libs.LibMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import java.util.Arrays;
 /**
  * Created by Necro on 9/12/2017.

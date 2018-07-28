@@ -1,7 +1,7 @@
 package convenientfoundation.client.gui.widget;
 
-import convenientfoundation.common.capabilities.heat.IHeatVessel;
 import convenientfoundation.client.gui.IGui;
+import convenientfoundation.common.capabilities.heat.IHeatVessel;
 import convenientfoundation.libs.LibMod;
 import convenientfoundation.util.GuiHelper;
 import net.minecraft.client.gui.GuiScreen;
